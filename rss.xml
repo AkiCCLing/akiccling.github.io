@@ -5,33 +5,14 @@
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Sat, 07 Oct 2023 05:27:06 +0800</pubDate>
-        <lastBuildDate>Sat, 07 Oct 2023 05:27:06 +0800</lastBuildDate>
-        <item>
-            <guid isPermalink="true">http://example.com/2023/10/07/hello-world/</guid>
-            <title>Hello World</title>
-            <link>http://example.com/2023/10/07/hello-world/</link>
-            <pubDate>Sat, 07 Oct 2023 05:27:06 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;Welcome to &lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&#34;https://hexo.io/docs/&#34;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&#34;https://hexo.io/docs/troubleshooting.html&#34;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&#34;https://github.com/hexojs/hexo/issues&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;quick-start&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#quick-start&#34;&gt;#&lt;/a&gt; Quick Start&lt;/h2&gt;
-&lt;h3 id=&#34;create-a-new-post&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#create-a-new-post&#34;&gt;#&lt;/a&gt; Create a new post&lt;/h3&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs bash&#34;&gt;$ hexo new &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;My New Post&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&#34;https://hexo.io/docs/writing.html&#34;&gt;Writing&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;run-server&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#run-server&#34;&gt;#&lt;/a&gt; Run server&lt;/h3&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs bash&#34;&gt;$ hexo server&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&#34;https://hexo.io/docs/server.html&#34;&gt;Server&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;generate-static-files&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#generate-static-files&#34;&gt;#&lt;/a&gt; Generate static files&lt;/h3&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs bash&#34;&gt;$ hexo generate&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&#34;https://hexo.io/docs/generating.html&#34;&gt;Generating&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;deploy-to-remote-sites&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#deploy-to-remote-sites&#34;&gt;#&lt;/a&gt; Deploy to remote sites&lt;/h3&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs bash&#34;&gt;$ hexo deploy&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&#34;https://hexo.io/docs/one-command-deployment.html&#34;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
- ]]></description>
-        </item>
+        <pubDate>Fri, 06 Oct 2023 16:52:12 +0800</pubDate>
+        <lastBuildDate>Fri, 06 Oct 2023 16:52:12 +0800</lastBuildDate>
+        <category>ACGN</category>
         <item>
             <guid isPermalink="true">http://example.com/2023/10/06/2007-2023%E5%9B%BD%E5%86%85%E5%BC%95%E8%BF%9B%E6%97%A5%E6%9C%AC%E5%8A%A8%E7%94%BB%E7%94%B5%E5%BD%B1%E7%A5%A8%E6%88%BF%E6%83%85%E5%86%B5/</guid>
             <title>2007-2023国内引进日本动画电影票房情况</title>
             <link>http://example.com/2023/10/06/2007-2023%E5%9B%BD%E5%86%85%E5%BC%95%E8%BF%9B%E6%97%A5%E6%9C%AC%E5%8A%A8%E7%94%BB%E7%94%B5%E5%BD%B1%E7%A5%A8%E6%88%BF%E6%83%85%E5%86%B5/</link>
+            <category>ACGN</category>
             <pubDate>Fri, 06 Oct 2023 16:52:12 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;数据如有错误，请在评论区留言。(更新时间 2023-9-20 18:46:30)&lt;/p&gt;
 &lt;h1 id=&#34;2023年&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2023年&#34;&gt;#&lt;/a&gt; 2023 年&lt;/h1&gt;

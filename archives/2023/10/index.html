@@ -58,7 +58,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#FA7298","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.5-a","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#FA7298","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -84,7 +84,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
+      <strong>Secret Garden</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -180,13 +180,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('https://s2.loli.net/2023/10/07/qI341fHtYJVeSGL.webp') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="归档"></span>
+            <span id="subtitle">归档</span>
           
         </div>
 
@@ -214,19 +214,13 @@
                 
 
 <div class="list-group">
-  <p class="h4">共计 3 篇文章</p>
+  <p class="h4">共计 2 篇文章</p>
   <hr>
   
   
     
       
       <p class="h5">2023</p>
-    
-    <a href="/2023/10/07/hello-world/" class="list-group-item list-group-item-action">
-      <time>10-07</time>
-      <div class="list-group-item-title">Hello World</div>
-    </a>
-  
     
     <a href="/2023/10/06/2007-2023%E5%9B%BD%E5%86%85%E5%BC%95%E8%BF%9B%E6%97%A5%E6%9C%AC%E5%8A%A8%E7%94%BB%E7%94%B5%E5%BD%B1%E7%A5%A8%E6%88%BF%E6%83%85%E5%86%B5/" class="list-group-item list-group-item-action">
       <time>10-06</time>
@@ -318,21 +312,6 @@
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
-      }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        typing(text);
-      
-    })(window, document);
-  </script>
 
 
 
