@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://example.com</id>
+    <id>https://clearacg.com</id>
     <title>Secret Garden • Posts by &#34;technology&#34; category</title>
-    <link href="http://example.com" />
+    <link href="https://clearacg.com" />
     <updated>2023-10-06T08:51:47.000Z</updated>
     <category term="ACGN" />
     <entry>
-        <id>http://example.com/2023/10/06/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E6%9C%8D%E6%95%99%E7%A8%8B/</id>
+        <id>https://clearacg.com/2023/10/06/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E6%9C%8D%E6%95%99%E7%A8%8B/</id>
         <title>Minecraft服务器开服教程</title>
-        <link rel="alternate" href="http://example.com/2023/10/06/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E6%9C%8D%E6%95%99%E7%A8%8B/"/>
+        <link rel="alternate" href="https://clearacg.com/2023/10/06/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E6%9C%8D%E6%95%99%E7%A8%8B/"/>
         <content type="html">&lt;h1 id=&#34;minecraft服务器开服教程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#minecraft服务器开服教程&#34;&gt;#&lt;/a&gt; Minecraft 服务器开服教程&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;在搭建服务器之前，需要准备：&lt;/p&gt;
