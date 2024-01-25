@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <rss version="2.0">
     <channel>
-        <title>Secret Garden • Posts by &#34;technology&#34; tag</title>
+        <title>Secret Garden • Posts by &#34;code&#34; tag</title>
         <link>https://clearacg.com</link>
         <description></description>
         <language>zh-CN</language>
@@ -89,56 +89,6 @@
 &lt;figure class=&#34;highlight csharp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs csharp&#34;&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; ;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;while&lt;/span&gt;(&lt;span class=&#34;hljs-literal&#34;&gt;true&lt;/span&gt;)&lt;br&gt;&amp;#123;&lt;br&gt;    Console.WriteLine(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;continue之前的代码&amp;quot;&lt;/span&gt;); &lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;continue&lt;/span&gt;;&lt;br&gt;    Console.WriteLine(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;continue之后的代码不会执行&amp;quot;&lt;/span&gt;); &lt;br&gt;&amp;#125;&lt;br&gt;Console.WriteLine(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;循环外的代码不会执行&amp;quot;&lt;/span&gt;);&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h2 id=&#34;补充内容&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#补充内容&#34;&gt;#&lt;/a&gt; 补充内容&lt;/h2&gt;
 &lt;figure class=&#34;highlight csharp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs csharp&#34;&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//输入一个键并赋值&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;char&lt;/span&gt; c = Console.ReadKey().KeyChar;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//输入一个键并赋值 且不在控制台显示&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;char&lt;/span&gt; c = Console.ReadKey(&lt;span class=&#34;hljs-literal&#34;&gt;true&lt;/span&gt;).KeyChar;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//清除控制台&lt;/span&gt;&lt;br&gt;Console.Clear();&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//设置光标位置 控制台左上角为0，0 右侧是x正方向 下方是y正方向&lt;/span&gt;&lt;br&gt;Console.SetCursorPosition(&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;5&lt;/span&gt;);&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//设置文字颜色&lt;/span&gt;&lt;br&gt;Console.ForegroundColor = ConsoleColor.Red;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//设置背景色 配合Clear使用 填充窗口颜色&lt;/span&gt;&lt;br&gt;Console.BackgroundColor = ConsoleColor.White;&lt;br&gt;Console.Clear();&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//光标显隐&lt;/span&gt;&lt;br&gt;Console.CursorVisible = &lt;span class=&#34;hljs-literal&#34;&gt;false&lt;/span&gt;;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//关闭控制台&lt;/span&gt;&lt;br&gt;Environment.Exit(&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;);&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://clearacg.com/2023/11/16/Git%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</guid>
-            <title>Git常用操作</title>
-            <link>https://clearacg.com/2023/11/16/Git%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</link>
-            <category>Technology</category>
-            <pubDate>Thu, 16 Nov 2023 16:51:31 +0000</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;git常用操作&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#git常用操作&#34;&gt;#&lt;/a&gt; Git 常用操作&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;内容及图片来自&lt;a href=&#34;https://space.bilibili.com/102438649&#34;&gt; GeekHour&lt;/a&gt;，请关注支持原作者。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/AkiCCLing/blog-image@master/blog/fffed6aee13fd71bdf6e72c450f96d69100cfce27f1ff6243cbd706c178ebc2b.webp&#34; alt=&#34;图 0&#34;&gt;&lt;/p&gt;
-&lt;h1 id=&#34;初始化设置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#初始化设置&#34;&gt;#&lt;/a&gt; 初始化设置&lt;/h1&gt;
-&lt;p&gt;配置⽤户名&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs bash&#34;&gt;git config --global user.name &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;Your Name&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;配置邮箱&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs bash&#34;&gt;git config --global user.email &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;mail@example.com&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;存储配置&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs bash&#34;&gt;git config --global credential store&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h1 id=&#34;创建仓库&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#创建仓库&#34;&gt;#&lt;/a&gt; 创建仓库&lt;/h1&gt;
-&lt;p&gt;创建⼀个新的本地仓库 (省略 project-name 则在当前⽬录创建)&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs bash&#34;&gt;git init &amp;lt;project-name&amp;gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;克隆⼀个远程仓库。&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs bash&#34;&gt;git &lt;span class=&#34;hljs-built_in&#34;&gt;clone&lt;/span&gt; &amp;lt;url&amp;gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h1 id=&#34;四个区域&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#四个区域&#34;&gt;#&lt;/a&gt; 四个区域&lt;/h1&gt;
-&lt;p&gt;⼯作区（Working Directory）就是你在电脑⾥能实际看到的⽬录。&lt;/p&gt;
-&lt;p&gt;暂存区（Stage / Index）&lt;br&gt;
-暂存区也叫索引，⽤来临时存放未提交的内容􀀄 ⼀般在.git ⽬录下的 index 中。&lt;/p&gt;
-&lt;p&gt;本地仓库（Repository）&lt;br&gt;
-Git 在本地的版本库，仓库信息存储在.git 这个隐藏⽬录中。&lt;/p&gt;
-&lt;p&gt;远程仓库（Remote Repository）&lt;br&gt;
-托管在远程服务器上的仓库􀀂 常⽤的有 GitHub、GitLab、Gitee。&lt;/p&gt;
-&lt;h1 id=&#34;文件状态&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#文件状态&#34;&gt;#&lt;/a&gt; 文件状态&lt;/h1&gt;
-&lt;p&gt;已修改（Modified）&lt;br&gt;
-修改了但是没有保存到暂存区的⽂件。&lt;/p&gt;
-&lt;p&gt;已暂存（Staged）&lt;br&gt;
-修改后已经保存到暂存区的⽂件。&lt;/p&gt;
-&lt;p&gt;已提交（Committed）&lt;br&gt;
-把暂存区的⽂件提交到本地仓库后的状态。&lt;/p&gt;
-&lt;p&gt;默认主分支&lt;br&gt;
- main/master&lt;/p&gt;
-&lt;p&gt;默认远程仓库&lt;br&gt;
- Origin&lt;/p&gt;
-&lt;p&gt;指向当前分支的指针&lt;br&gt;
- HEAD&lt;/p&gt;
-&lt;p&gt;上一个版本&lt;br&gt;
- HEAD^&lt;/p&gt;
-&lt;p&gt;上四个版本&lt;br&gt;
- HEAD~&lt;/p&gt;
  ]]></description>
         </item>
     </channel>
