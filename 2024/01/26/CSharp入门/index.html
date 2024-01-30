@@ -1,120 +1,318 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://s2.loli.net/2023/10/22/KA9YFMOp837rGuH.png">
+  <link rel="icon" href="https://s2.loli.net/2023/10/22/KA9YFMOp837rGuH.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
+  <meta name="theme-color" content="#FA7298">
+  <meta name="author" content="Aki_CCLing">
+  <meta name="keywords" content="">
   
-  <title>CSharp入门 | Secret Garden</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="# 总结：学习了基础关键词的作用 和一些算法 # 命名规范 123456789101112131415161718&#x2F;&#x2F;变量命名 遵循首字母小写 后面的单词首字母大写int myName &#x3D; 12;int yourName &#x3D; 13;string myString &#x3D; &quot;我的字符串&quot;;&#x2F;&#x2F;函数和类的命名 循序首字母大写class MyArray&amp;#123;&amp;#125;int My">
+    <meta name="description" content="# 总结：学习了基础关键词的作用 和一些算法 # 命名规范 123456789101112131415161718&#x2F;&#x2F;变量命名 遵循首字母小写 后面的单词首字母大写int myName &#x3D; 12;int yourName &#x3D; 13;string myString &#x3D; &quot;我的字符串&quot;;&#x2F;&#x2F;函数和类的命名 循序首字母大写class MyArray&amp;#123;&amp;#125;int My">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSharp入门">
 <meta property="og:url" content="https://clearacg.com/2024/01/26/CSharp%E5%85%A5%E9%97%A8/index.html">
 <meta property="og:site_name" content="Secret Garden">
 <meta property="og:description" content="# 总结：学习了基础关键词的作用 和一些算法 # 命名规范 123456789101112131415161718&#x2F;&#x2F;变量命名 遵循首字母小写 后面的单词首字母大写int myName &#x3D; 12;int yourName &#x3D; 13;string myString &#x3D; &quot;我的字符串&quot;;&#x2F;&#x2F;函数和类的命名 循序首字母大写class MyArray&amp;#123;&amp;#125;int My">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/jpeg/25552567/1655378202640-959f0806-0c66-4ef9-ae68-bd561b72899e.jpeg#averageHue=%23364732&amp;clientId=uc0f3ef77-3962-4&amp;from=drop&amp;id=u2a0db7ef&amp;originHeight=259&amp;originWidth=972&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=51075&amp;status=done&amp;style=none&amp;taskId=u2d6e4b74-d33f-4556-be8c-2e8980fad01&amp;title=">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25552567/1655689182460-5de19ecd-62b0-461b-b332-af10d3a63bb0.png#averageHue=%23252525&amp;clientId=ufe61610f-edae-4&amp;from=drop&amp;height=420&amp;id=ub82e8ca4&amp;originHeight=315&amp;originWidth=421&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=78571&amp;status=done&amp;style=none&amp;taskId=u82b70d23-2b99-4627-a8f9-3170ed4cf75&amp;title=&amp;width=561">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25552567/1655690363660-31ed3ab2-3fc9-4323-a9db-33475e3115af.png#averageHue=%23525043&amp;clientId=u0c14d9d7-b79b-4&amp;from=drop&amp;id=u947c606c&amp;originHeight=384&amp;originWidth=462&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=151676&amp;status=done&amp;style=none&amp;taskId=uf031b889-aff3-4547-b608-2a266989f19&amp;title=">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25552567/1655714715943-a44ca710-030b-4ae8-842c-01307c85297a.png#averageHue=%23404137&amp;clientId=u8848ca3e-7155-4&amp;from=drop&amp;height=326&amp;id=u9005a501&amp;originHeight=310&amp;originWidth=439&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=138222&amp;status=done&amp;style=none&amp;taskId=u25195c36-b793-435b-8acf-6ad30ed5ee6&amp;title=&amp;width=461">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25552567/1655716508185-407871b2-ffbc-4fc1-bf42-923bab950325.png#averageHue=%233f3d37&amp;clientId=u8848ca3e-7155-4&amp;from=drop&amp;height=209&amp;id=u5d8cb971&amp;originHeight=209&amp;originWidth=377&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=64553&amp;status=done&amp;style=none&amp;taskId=uc76c71bc-67cb-49d2-b534-ea2f6100b58&amp;title=&amp;width=377">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25552567/1655716510749-f4c435a8-f7f4-49a9-afb6-6bd87225fc79.png#averageHue=%23272726&amp;clientId=u8848ca3e-7155-4&amp;from=drop&amp;height=209&amp;id=ub1d60d79&amp;originHeight=222&amp;originWidth=386&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=60863&amp;status=done&amp;style=none&amp;taskId=ufe20d337-4684-4871-8225-7cea3aa39ec&amp;title=&amp;width=363">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25552567/1655716513078-52e0b505-cc51-4ae3-a45d-600058189046.png#averageHue=%23272727&amp;clientId=u8848ca3e-7155-4&amp;from=drop&amp;height=202&amp;id=ue557d81b&amp;originHeight=208&amp;originWidth=391&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=60506&amp;status=done&amp;style=none&amp;taskId=ufaf72162-a5be-4fdf-a226-b2dd1e4cc8c&amp;title=&amp;width=380">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25552567/1655717846632-6905aa3a-f46a-4e31-a091-9b25afa315c3.png#averageHue=%233a3a32&amp;clientId=u8848ca3e-7155-4&amp;from=drop&amp;height=203&amp;id=uda6e9378&amp;originHeight=212&amp;originWidth=412&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=84466&amp;status=done&amp;style=none&amp;taskId=ua55ffbdc-d0f7-4b6c-b491-5fb9a720196&amp;title=&amp;width=395">
+<meta property="og:image" content="https://pic.imgdb.cn/item/65b2aa8b871b83018a3e31ec.jpg">
 <meta property="article:published_time" content="2024-01-26T02:37:23.000Z">
 <meta property="article:modified_time" content="2024-01-26T02:37:23.000Z">
 <meta property="article:author" content="Aki_CCLing">
 <meta property="article:tag" content="Technology">
 <meta property="article:tag" content="Code">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2022/jpeg/25552567/1655378202640-959f0806-0c66-4ef9-ae68-bd561b72899e.jpeg#averageHue=%23364732&amp;clientId=uc0f3ef77-3962-4&amp;from=drop&amp;id=u2a0db7ef&amp;originHeight=259&amp;originWidth=972&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=51075&amp;status=done&amp;style=none&amp;taskId=u2d6e4b74-d33f-4556-be8c-2e8980fad01&amp;title=">
-  
-    
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://pic.imgdb.cn/item/65b2aa8b871b83018a3e31ec.jpg">
   
   
-    <link rel="shortcut icon" href="/favicon.png">
+    <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+  <title>CSharp入门 - Secret Garden</title>
 
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
   
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"clearacg.com","root":"/","version":"1.9.7","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#FA7298","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
   
 <meta name="generator" content="Hexo 6.3.0"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Secret Garden</a>
-      </h1>
-      
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Secret Garden</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/bangumis/" target="_self">
+                <i class="iconfont icon-rss"></i>
+                <span>追番</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://pic.imgdb.cn/item/65b2aa8b871b83018a3e31ec.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle">CSharp入门</span>
+          
+        </div>
+
         
-          <a class="main-nav-link" href="/">Home</a>
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-01-26 02:37" pubdate>
+          2024年1月26日 02:37
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          1.5k 字
         
-      </nav>
-      <nav id="sub-nav">
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
         
         
-          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
         
-        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://clearacg.com"></form>
+          13 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
       </div>
+
+      
     </div>
   </div>
-</header>
+</div>
 
-      <div class="outer">
-        <section id="main"><article id="post-CSharp入门" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/01/26/CSharp%E5%85%A5%E9%97%A8/" class="article-date">
-  <time class="dt-published" datetime="2024-01-26T02:37:23.000Z" itemprop="datePublished">2024-01-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Technology/">Technology</a>
-  </div>
+</div>
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      CSharp入门
-    </h1>
-  
+  </header>
 
-      </header>
+  <main>
     
-    <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="总结学习了基础关键词的作用-和一些算法"><a class="markdownIt-Anchor" href="#总结学习了基础关键词的作用-和一些算法">#</a> 总结：学习了基础关键词的作用 和一些算法</h2>
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">CSharp入门</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="总结学习了基础关键词的作用-和一些算法"><a class="markdownIt-Anchor" href="#总结学习了基础关键词的作用-和一些算法">#</a> 总结：学习了基础关键词的作用 和一些算法</h2>
 <h2 id="命名规范"><a class="markdownIt-Anchor" href="#命名规范">#</a> 命名规范</h2>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//变量命名 遵循首字母小写 后面的单词首字母大写</span></span><br><span class="line"><span class="built_in">int</span> myName = <span class="number">12</span>;</span><br><span class="line"><span class="built_in">int</span> yourName = <span class="number">13</span>;</span><br><span class="line"><span class="built_in">string</span> myString = <span class="string">&quot;我的字符串&quot;</span>;</span><br><span class="line"><span class="comment">//函数和类的命名 循序首字母大写</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">MyArray</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="built_in">int</span> <span class="title">MyFunction</span> ()</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">region</span></span></span><br><span class="line"><span class="comment">//折叠代码</span></span><br><span class="line"><span class="meta">#<span class="keyword">endregion</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-comment">//变量命名 遵循首字母小写 后面的单词首字母大写</span><br><span class="hljs-built_in">int</span> myName = <span class="hljs-number">12</span>;<br><span class="hljs-built_in">int</span> yourName = <span class="hljs-number">13</span>;<br><span class="hljs-built_in">string</span> myString = <span class="hljs-string">&quot;我的字符串&quot;</span>;<br><span class="hljs-comment">//函数和类的命名 循序首字母大写</span><br><span class="hljs-keyword">class</span> <span class="hljs-title">MyArray</span>&#123;<br><br>&#125;<br><br><br><span class="hljs-function"><span class="hljs-built_in">int</span> <span class="hljs-title">MyFunction</span> ()</span>&#123;<br><br>&#125;<br><br><br><span class="hljs-meta">#<span class="hljs-keyword">region</span></span><br><span class="hljs-comment">//折叠代码</span><br><span class="hljs-meta">#<span class="hljs-keyword">endregion</span></span><br></code></pre></td></tr></table></figure>
 <h2 id="变量类型"><a class="markdownIt-Anchor" href="#变量类型">#</a> 变量类型</h2>
 <p>1 字节 = 8 比特 = 8 位 例：1001 0100<br></p>
 <p><strong>无符号</strong> 正整数集 <strong>ulong</strong> (64 位) <strong>uint</strong> (32 位) <strong>ushort</strong> (16 位) <strong>byte</strong> (8 位)<br></p>
@@ -124,206 +322,470 @@
 <p><strong>声明常量</strong> 变量前加 **“const”** 关键字<br></p>
 <p><code>const float PI = 3.14159265f;</code></p>
 <h2 id="转义字符"><a class="markdownIt-Anchor" href="#转义字符">#</a> 转义字符</h2>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在字符串中使用 &quot;&quot; &#x27;&#x27; \ 时要使用转义字符&quot;\&quot;来标识</span></span><br><span class="line"><span class="comment">//使用 &quot;\n&quot; 来完成字符串换行</span></span><br><span class="line"><span class="comment">//或者在字符串前加上&quot;@&quot;来取消转义字符&quot;\&quot;</span></span><br><span class="line">Console.WriteLine(<span class="string">&quot;\&quot;哈哈哈\&quot;&quot;</span>); <span class="comment">//打印结果为：&quot;哈哈哈&quot;</span></span><br><span class="line">Console.WriteLine(<span class="string">@&quot;哈\哈哈&quot;</span>); <span class="comment">//打印结果为：&quot;哈\哈哈&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-comment">//在字符串中使用 &quot;&quot; &#x27;&#x27; \ 时要使用转义字符&quot;\&quot;来标识</span><br><span class="hljs-comment">//使用 &quot;\n&quot; 来完成字符串换行</span><br><span class="hljs-comment">//或者在字符串前加上&quot;@&quot;来取消转义字符&quot;\&quot;</span><br>Console.WriteLine(<span class="hljs-string">&quot;\&quot;哈哈哈\&quot;&quot;</span>); <span class="hljs-comment">//打印结果为：&quot;哈哈哈&quot;</span><br>Console.WriteLine(<span class="hljs-string">@&quot;哈\哈哈&quot;</span>); <span class="hljs-comment">//打印结果为：&quot;哈\哈哈&quot;</span><br></code></pre></td></tr></table></figure>
 <h2 id="数据类型转换"><a class="markdownIt-Anchor" href="#数据类型转换">#</a> 数据类型转换</h2>
 <h3 id="隐式转换"><a class="markdownIt-Anchor" href="#隐式转换">#</a> 隐式转换</h3>
 <p>小范围可以隐式转换大范围</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">long</span> i =<span class="number">1</span>;</span><br><span class="line"><span class="built_in">int</span> i2 =<span class="number">1</span>;</span><br><span class="line">i=i2;</span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.nlark.com/yuque/0/2022/jpeg/25552567/1655378202640-959f0806-0c66-4ef9-ae68-bd561b72899e.jpeg#averageHue=%23364732&amp;clientId=uc0f3ef77-3962-4&amp;from=drop&amp;id=u2a0db7ef&amp;originHeight=259&amp;originWidth=972&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=51075&amp;status=done&amp;style=none&amp;taskId=u2d6e4b74-d33f-4556-be8c-2e8980fad01&amp;title=" alt="1829a42d425612adad7fbb1bbfab56e.jpg"><br></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-built_in">long</span> i =<span class="hljs-number">1</span>;<br><span class="hljs-built_in">int</span> i2 =<span class="hljs-number">1</span>;<br>i=i2;<br></code></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/jpeg/25552567/1655378202640-959f0806-0c66-4ef9-ae68-bd561b72899e.jpeg#averageHue=%23364732&amp;clientId=uc0f3ef77-3962-4&amp;from=drop&amp;id=u2a0db7ef&amp;originHeight=259&amp;originWidth=972&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=51075&amp;status=done&amp;style=none&amp;taskId=u2d6e4b74-d33f-4556-be8c-2e8980fad01&amp;title=" srcset="/img/loading.gif" lazyload alt="1829a42d425612adad7fbb1bbfab56e.jpg"><br></p>
 <p>char 可以隐式转换成整数和浮点，转换结果为 Ascii 码。</p>
 <h3 id="显式转换"><a class="markdownIt-Anchor" href="#显式转换">#</a> 显式转换</h3>
 <h4 id="括号强转"><a class="markdownIt-Anchor" href="#括号强转">#</a> 括号强转</h4>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//显示转换 括号强转 高精度转低精度</span></span><br><span class="line"><span class="comment">//（整数可能会出现范围超出 浮点会出现精度问题）</span></span><br><span class="line"><span class="comment">// 格式： 变量 =（转换的类型）变量</span></span><br><span class="line"><span class="built_in">int</span> i = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">short</span> s = <span class="number">1</span>;</span><br><span class="line">s = (<span class="built_in">short</span>)i;</span><br><span class="line"></span><br><span class="line"><span class="built_in">byte</span> b = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">uint</span> ui = <span class="number">1</span>;</span><br><span class="line">b = (<span class="built_in">byte</span>)ui;</span><br><span class="line"></span><br><span class="line"><span class="comment">//浮点强转整形时会抛弃小数点后的数 无四舍五入</span></span><br><span class="line"><span class="built_in">float</span> f = <span class="number">18.789f</span>;</span><br><span class="line">i = (<span class="built_in">int</span>)f;</span><br><span class="line">Console.WriteLine(i);</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-comment">//显示转换 括号强转 高精度转低精度</span><br><span class="hljs-comment">//（整数可能会出现范围超出 浮点会出现精度问题）</span><br><span class="hljs-comment">// 格式： 变量 =（转换的类型）变量</span><br><span class="hljs-built_in">int</span> i = <span class="hljs-number">1</span>;<br><span class="hljs-built_in">short</span> s = <span class="hljs-number">1</span>;<br>s = (<span class="hljs-built_in">short</span>)i;<br><br><span class="hljs-built_in">byte</span> b = <span class="hljs-number">1</span>;<br><span class="hljs-built_in">uint</span> ui = <span class="hljs-number">1</span>;<br>b = (<span class="hljs-built_in">byte</span>)ui;<br><br><span class="hljs-comment">//浮点强转整形时会抛弃小数点后的数 无四舍五入</span><br><span class="hljs-built_in">float</span> f = <span class="hljs-number">18.789f</span>;<br>i = (<span class="hljs-built_in">int</span>)f;<br>Console.WriteLine(i);<br></code></pre></td></tr></table></figure>
 <h4 id="parse法"><a class="markdownIt-Anchor" href="#parse法">#</a> Parse 法</h4>
 <p>字符串转对应类型</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//目标变量.Parse(“字符串”)；</span></span><br><span class="line"><span class="built_in">string</span> str1 = <span class="string">&quot;123&quot;</span>;</span><br><span class="line"><span class="built_in">int</span> i2 = <span class="built_in">int</span>.Parse(str1);   <span class="comment">//字符串转对应类型 注意值的范围</span></span><br><span class="line">i2 += <span class="number">100</span>;                  <span class="comment">//可以进行数学计算</span></span><br><span class="line">Console.WriteLine(i2);</span><br><span class="line"></span><br><span class="line"><span class="built_in">short</span> s3 = (<span class="built_in">short</span>)<span class="built_in">int</span>.Parse(<span class="string">&quot;4000000&quot;</span>); <span class="comment">// 字符串“4000000”转int后转short</span></span><br><span class="line">Console.WriteLine(s3);</span><br><span class="line"><span class="comment">//打印结果为 2304 因为short范围问题</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-comment">//目标变量.Parse(“字符串”)；</span><br><span class="hljs-built_in">string</span> str1 = <span class="hljs-string">&quot;123&quot;</span>;<br><span class="hljs-built_in">int</span> i2 = <span class="hljs-built_in">int</span>.Parse(str1);   <span class="hljs-comment">//字符串转对应类型 注意值的范围</span><br>i2 += <span class="hljs-number">100</span>;                  <span class="hljs-comment">//可以进行数学计算</span><br>Console.WriteLine(i2);<br><br><span class="hljs-built_in">short</span> s3 = (<span class="hljs-built_in">short</span>)<span class="hljs-built_in">int</span>.Parse(<span class="hljs-string">&quot;4000000&quot;</span>); <span class="hljs-comment">// 字符串“4000000”转int后转short</span><br>Console.WriteLine(s3);<br><span class="hljs-comment">//打印结果为 2304 因为short范围问题</span><br></code></pre></td></tr></table></figure>
 <h4 id="convert法"><a class="markdownIt-Anchor" href="#convert法">#</a> Convert 法</h4>
 <p>适用性强 什么都能转</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//更准确的将各类型之间转换</span></span><br><span class="line"><span class="comment">//Convert.To对应类型(变量)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//转字符串 </span></span><br><span class="line"><span class="built_in">int</span> a = Convert.ToInt32(<span class="string">&quot;12&quot;</span>);</span><br><span class="line"><span class="built_in">string</span> str2 = Convert.ToString(<span class="number">321</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//浮点数转换 精度更高四舍五入 </span></span><br><span class="line">a = Convert.ToInt32(<span class="number">3.6789f</span>);</span><br><span class="line">Console.WriteLine(a);</span><br><span class="line"><span class="comment">//打印结果为 4</span></span><br><span class="line"><span class="built_in">float</span> f1 = Convert.ToSingle(<span class="string">&quot;13.567&quot;</span>);</span><br><span class="line"><span class="comment">//打印结果为 13.567</span></span><br><span class="line">Console.WriteLine(a);</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-comment">//更准确的将各类型之间转换</span><br><span class="hljs-comment">//Convert.To对应类型(变量)</span><br><br><span class="hljs-comment">//转字符串 </span><br><span class="hljs-built_in">int</span> a = Convert.ToInt32(<span class="hljs-string">&quot;12&quot;</span>);<br><span class="hljs-built_in">string</span> str2 = Convert.ToString(<span class="hljs-number">321</span>);<br><br><span class="hljs-comment">//浮点数转换 精度更高四舍五入 </span><br>a = Convert.ToInt32(<span class="hljs-number">3.6789f</span>);<br>Console.WriteLine(a);<br><span class="hljs-comment">//打印结果为 4</span><br><span class="hljs-built_in">float</span> f1 = Convert.ToSingle(<span class="hljs-string">&quot;13.567&quot;</span>);<br><span class="hljs-comment">//打印结果为 13.567</span><br>Console.WriteLine(a);<br></code></pre></td></tr></table></figure>
 <h4 id="其他类型转string"><a class="markdownIt-Anchor" href="#其他类型转string">#</a> 其他类型转 String</h4>
 <p>拼接打印</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 作用 拼接打印</span></span><br><span class="line"><span class="comment">// 语法 变量.tostring();</span></span><br><span class="line"><span class="built_in">string</span> str3 = <span class="number">9888.</span>ToString();</span><br><span class="line">Console.WriteLine(str3);</span><br><span class="line"><span class="comment">//打印结果为9888</span></span><br><span class="line"><span class="built_in">int</span> a4 = <span class="number">1</span> ;</span><br><span class="line">str3 = a4.ToString();</span><br><span class="line"><span class="built_in">bool</span> b1 = <span class="literal">true</span>;</span><br><span class="line">str3 = b1.ToString();</span><br><span class="line">Console.WriteLine(str3);</span><br><span class="line"><span class="comment">//打印结果为true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//调用打印时 进行拼接时 字符串 + 变量 会默认转换</span></span><br><span class="line">Console.WriteLine(<span class="string">&quot;数字是：&quot;</span> + a4 + b1);</span><br><span class="line"><span class="comment">//上下效果相同</span></span><br><span class="line">Console.WriteLine(<span class="string">&quot;数字是：&quot;</span> + a4.ToString() + b1.ToString());</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-comment">// 作用 拼接打印</span><br><span class="hljs-comment">// 语法 变量.tostring();</span><br><span class="hljs-built_in">string</span> str3 = <span class="hljs-number">9888.</span>ToString();<br>Console.WriteLine(str3);<br><span class="hljs-comment">//打印结果为9888</span><br><span class="hljs-built_in">int</span> a4 = <span class="hljs-number">1</span> ;<br>str3 = a4.ToString();<br><span class="hljs-built_in">bool</span> b1 = <span class="hljs-literal">true</span>;<br>str3 = b1.ToString();<br>Console.WriteLine(str3);<br><span class="hljs-comment">//打印结果为true</span><br><br><span class="hljs-comment">//调用打印时 进行拼接时 字符串 + 变量 会默认转换</span><br>Console.WriteLine(<span class="hljs-string">&quot;数字是：&quot;</span> + a4 + b1);<br><span class="hljs-comment">//上下效果相同</span><br>Console.WriteLine(<span class="hljs-string">&quot;数字是：&quot;</span> + a4.ToString() + b1.ToString());<br></code></pre></td></tr></table></figure>
 <h2 id="异常捕获"><a class="markdownIt-Anchor" href="#异常捕获">#</a> 异常捕获</h2>
-<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25552567/1655689182460-5de19ecd-62b0-461b-b332-af10d3a63bb0.png#averageHue=%23252525&amp;clientId=ufe61610f-edae-4&amp;from=drop&amp;height=420&amp;id=ub82e8ca4&amp;originHeight=315&amp;originWidth=421&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=78571&amp;status=done&amp;style=none&amp;taskId=u82b70d23-2b99-4627-a8f9-3170ed4cf75&amp;title=&amp;width=561" alt="b78e4fee0516a944f26c5fe50cc25bd.png"></p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">string</span> str = Console.ReadLine();</span><br><span class="line">    <span class="built_in">int</span>.Parse(str);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span></span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;请输入合法数字&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25552567/1655689182460-5de19ecd-62b0-461b-b332-af10d3a63bb0.png#averageHue=%23252525&amp;clientId=ufe61610f-edae-4&amp;from=drop&amp;height=420&amp;id=ub82e8ca4&amp;originHeight=315&amp;originWidth=421&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=78571&amp;status=done&amp;style=none&amp;taskId=u82b70d23-2b99-4627-a8f9-3170ed4cf75&amp;title=&amp;width=561" srcset="/img/loading.gif" lazyload alt="b78e4fee0516a944f26c5fe50cc25bd.png"></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-keyword">try</span><br>&#123;<br>    <span class="hljs-built_in">string</span> str = Console.ReadLine();<br>    <span class="hljs-built_in">int</span>.Parse(str);<br>&#125;<br><span class="hljs-keyword">catch</span><br>&#123;<br>    Console.WriteLine(<span class="hljs-string">&quot;请输入合法数字&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
 <h2 id="自增运算符"><a class="markdownIt-Anchor" href="#自增运算符">#</a> 自增运算符</h2>
-<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25552567/1655690363660-31ed3ab2-3fc9-4323-a9db-33475e3115af.png#averageHue=%23525043&amp;clientId=u0c14d9d7-b79b-4&amp;from=drop&amp;id=u947c606c&amp;originHeight=384&amp;originWidth=462&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=151676&amp;status=done&amp;style=none&amp;taskId=uf031b889-aff3-4547-b608-2a266989f19&amp;title=" alt="419482fad0cb86bde74410b1137d2e2.png"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25552567/1655690363660-31ed3ab2-3fc9-4323-a9db-33475e3115af.png#averageHue=%23525043&amp;clientId=u0c14d9d7-b79b-4&amp;from=drop&amp;id=u947c606c&amp;originHeight=384&amp;originWidth=462&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=151676&amp;status=done&amp;style=none&amp;taskId=uf031b889-aff3-4547-b608-2a266989f19&amp;title=" srcset="/img/loading.gif" lazyload alt="419482fad0cb86bde74410b1137d2e2.png"></p>
 <h2 id="逻辑运算符的短路规则"><a class="markdownIt-Anchor" href="#逻辑运算符的短路规则">#</a> 逻辑运算符的短路规则</h2>
 <p><strong>与：&amp;&amp;</strong> 有假则假 同真为真<br></p>
 <p><strong>或：||</strong> 有真为真 同假为假<br></p>
 <p><strong>非：！</strong> 反转真假<br></p>
 <p>运算优先级： ! &gt; &amp;&amp; &gt; ||</p>
 <p>i3 打印结果为 1<br></p>
-<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25552567/1655714715943-a44ca710-030b-4ae8-842c-01307c85297a.png#averageHue=%23404137&amp;clientId=u8848ca3e-7155-4&amp;from=drop&amp;height=326&amp;id=u9005a501&amp;originHeight=310&amp;originWidth=439&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=138222&amp;status=done&amp;style=none&amp;taskId=u25195c36-b793-435b-8acf-6ad30ed5ee6&amp;title=&amp;width=461" alt="b9af060679f6f1a2d46185d34ec8c6d.png"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25552567/1655714715943-a44ca710-030b-4ae8-842c-01307c85297a.png#averageHue=%23404137&amp;clientId=u8848ca3e-7155-4&amp;from=drop&amp;height=326&amp;id=u9005a501&amp;originHeight=310&amp;originWidth=439&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=138222&amp;status=done&amp;style=none&amp;taskId=u25195c36-b793-435b-8acf-6ad30ed5ee6&amp;title=&amp;width=461" srcset="/img/loading.gif" lazyload alt="b9af060679f6f1a2d46185d34ec8c6d.png"></p>
 <h2 id="位运算符"><a class="markdownIt-Anchor" href="#位运算符">#</a> 位运算符</h2>
-<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25552567/1655716508185-407871b2-ffbc-4fc1-bf42-923bab950325.png#averageHue=%233f3d37&amp;clientId=u8848ca3e-7155-4&amp;from=drop&amp;height=209&amp;id=u5d8cb971&amp;originHeight=209&amp;originWidth=377&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=64553&amp;status=done&amp;style=none&amp;taskId=uc76c71bc-67cb-49d2-b534-ea2f6100b58&amp;title=&amp;width=377" alt="23c4da148546d6f24aa6c8af2b9f855.png"><img src="https://cdn.nlark.com/yuque/0/2022/png/25552567/1655716510749-f4c435a8-f7f4-49a9-afb6-6bd87225fc79.png#averageHue=%23272726&amp;clientId=u8848ca3e-7155-4&amp;from=drop&amp;height=209&amp;id=ub1d60d79&amp;originHeight=222&amp;originWidth=386&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=60863&amp;status=done&amp;style=none&amp;taskId=ufe20d337-4684-4871-8225-7cea3aa39ec&amp;title=&amp;width=363" alt="96314a0dadc51c22c36c34ef9cd2921.png"><br></p>
-<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25552567/1655716513078-52e0b505-cc51-4ae3-a45d-600058189046.png#averageHue=%23272727&amp;clientId=u8848ca3e-7155-4&amp;from=drop&amp;height=202&amp;id=ue557d81b&amp;originHeight=208&amp;originWidth=391&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=60506&amp;status=done&amp;style=none&amp;taskId=ufaf72162-a5be-4fdf-a226-b2dd1e4cc8c&amp;title=&amp;width=380" alt="3be9bcb1c4464534de49d2c499eede3.png"><img src="https://cdn.nlark.com/yuque/0/2022/png/25552567/1655717846632-6905aa3a-f46a-4e31-a091-9b25afa315c3.png#averageHue=%233a3a32&amp;clientId=u8848ca3e-7155-4&amp;from=drop&amp;height=203&amp;id=uda6e9378&amp;originHeight=212&amp;originWidth=412&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=84466&amp;status=done&amp;style=none&amp;taskId=ua55ffbdc-d0f7-4b6c-b491-5fb9a720196&amp;title=&amp;width=395" alt="f763bac3287b655c9f7d3312e055761.png"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25552567/1655716508185-407871b2-ffbc-4fc1-bf42-923bab950325.png#averageHue=%233f3d37&amp;clientId=u8848ca3e-7155-4&amp;from=drop&amp;height=209&amp;id=u5d8cb971&amp;originHeight=209&amp;originWidth=377&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=64553&amp;status=done&amp;style=none&amp;taskId=uc76c71bc-67cb-49d2-b534-ea2f6100b58&amp;title=&amp;width=377" srcset="/img/loading.gif" lazyload alt="23c4da148546d6f24aa6c8af2b9f855.png"><img src="https://cdn.nlark.com/yuque/0/2022/png/25552567/1655716510749-f4c435a8-f7f4-49a9-afb6-6bd87225fc79.png#averageHue=%23272726&amp;clientId=u8848ca3e-7155-4&amp;from=drop&amp;height=209&amp;id=ub1d60d79&amp;originHeight=222&amp;originWidth=386&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=60863&amp;status=done&amp;style=none&amp;taskId=ufe20d337-4684-4871-8225-7cea3aa39ec&amp;title=&amp;width=363" srcset="/img/loading.gif" lazyload alt="96314a0dadc51c22c36c34ef9cd2921.png"><br></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25552567/1655716513078-52e0b505-cc51-4ae3-a45d-600058189046.png#averageHue=%23272727&amp;clientId=u8848ca3e-7155-4&amp;from=drop&amp;height=202&amp;id=ue557d81b&amp;originHeight=208&amp;originWidth=391&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=60506&amp;status=done&amp;style=none&amp;taskId=ufaf72162-a5be-4fdf-a226-b2dd1e4cc8c&amp;title=&amp;width=380" srcset="/img/loading.gif" lazyload alt="3be9bcb1c4464534de49d2c499eede3.png"><img src="https://cdn.nlark.com/yuque/0/2022/png/25552567/1655717846632-6905aa3a-f46a-4e31-a091-9b25afa315c3.png#averageHue=%233a3a32&amp;clientId=u8848ca3e-7155-4&amp;from=drop&amp;height=203&amp;id=uda6e9378&amp;originHeight=212&amp;originWidth=412&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=84466&amp;status=done&amp;style=none&amp;taskId=ua55ffbdc-d0f7-4b6c-b491-5fb9a720196&amp;title=&amp;width=395" srcset="/img/loading.gif" lazyload alt="f763bac3287b655c9f7d3312e055761.png"></p>
 <h2 id="三目运算符"><a class="markdownIt-Anchor" href="#三目运算符">#</a> 三目运算符</h2>
 <p>可以实现简单的逻辑运算 if 和 else <br></p>
 <h2 id="分支语句"><a class="markdownIt-Anchor" href="#分支语句">#</a> 分支语句</h2>
 <h3 id="if"><a class="markdownIt-Anchor" href="#if">#</a> If</h3>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//三种写法</span></span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">bool</span>值)</span><br><span class="line">&#123;</span><br><span class="line">    如果为真则执行此语句块的代码</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//——————————————————————————————</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">bool</span>值)</span><br><span class="line">&#123;</span><br><span class="line">    如果为真则执行此语句块的代码</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span> (<span class="built_in">bool</span>值)</span><br><span class="line">&#123;</span><br><span class="line">    否则执行此段语句块代码</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//————————————————————————————————</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">bool</span>值)</span><br><span class="line">&#123;</span><br><span class="line">    如果为真则执行此语句块的代码</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">bool</span>值)</span><br><span class="line">&#123;</span><br><span class="line">    否则执行此段语句块代码</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">bool</span>值)</span><br><span class="line">&#123;</span><br><span class="line">    否则执行此段语句块代码</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//..........可以 else if 下去</span></span><br><span class="line"><span class="keyword">else</span> (<span class="built_in">bool</span>值)</span><br><span class="line">&#123;</span><br><span class="line">    否则执行此段语句块代码</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//————————————————————————————————————</span></span><br><span class="line"><span class="comment">//if嵌套</span></span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">bool</span>值)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">bool</span>值)</span><br><span class="line">    &#123;</span><br><span class="line">    </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">bool</span>值)</span><br><span class="line">    &#123;</span><br><span class="line">    </span><br><span class="line">    &#125;    </span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">bool</span>值)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">//if扩展写法</span></span><br><span class="line"><span class="keyword">if</span>(!<span class="built_in">bool</span>值)</span><br><span class="line">&#123;</span><br><span class="line">    如果为真则执行此语句块的代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-comment">//三种写法</span><br><span class="hljs-keyword">if</span> (<span class="hljs-built_in">bool</span>值)<br>&#123;<br>    如果为真则执行此语句块的代码<br>&#125;<br><br><span class="hljs-comment">//——————————————————————————————</span><br><br><span class="hljs-keyword">if</span> (<span class="hljs-built_in">bool</span>值)<br>&#123;<br>    如果为真则执行此语句块的代码<br>&#125;<br><br><br><span class="hljs-keyword">else</span> (<span class="hljs-built_in">bool</span>值)<br>&#123;<br>    否则执行此段语句块代码<br>&#125;<br><br><span class="hljs-comment">//————————————————————————————————</span><br><br><span class="hljs-keyword">if</span> (<span class="hljs-built_in">bool</span>值)<br>&#123;<br>    如果为真则执行此语句块的代码<br>&#125;<br><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">bool</span>值)<br>&#123;<br>    否则执行此段语句块代码<br>&#125;<br><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">bool</span>值)<br>&#123;<br>    否则执行此段语句块代码<br>&#125;<br><span class="hljs-comment">//..........可以 else if 下去</span><br><span class="hljs-keyword">else</span> (<span class="hljs-built_in">bool</span>值)<br>&#123;<br>    否则执行此段语句块代码<br>&#125;<br><br><span class="hljs-comment">//————————————————————————————————————</span><br><span class="hljs-comment">//if嵌套</span><br><span class="hljs-keyword">if</span> (<span class="hljs-built_in">bool</span>值)<br>&#123;<br>    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">bool</span>值)<br>    &#123;<br>    <br>    &#125;  <br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">bool</span>值)<br>    &#123;<br>    <br>    &#125;    <br><br>&#125;<br><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">bool</span>值)<br>&#123;<br><br>&#125; <br><br><span class="hljs-comment">//if扩展写法</span><br><span class="hljs-keyword">if</span>(!<span class="hljs-built_in">bool</span>值)<br>&#123;<br>    如果为真则执行此语句块的代码<br>&#125;<br></code></pre></td></tr></table></figure>
 <h3 id="switch"><a class="markdownIt-Anchor" href="#switch">#</a> Switch</h3>
 <p>用于枚举</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (变量)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//变量==常量时执行case和break之间的代码     </span></span><br><span class="line">    <span class="keyword">case</span> 常量:    <span class="comment">//常量，只能写固定的值 不能写范围 逻辑运算符等</span></span><br><span class="line">        满足条件所执行的代码</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">case</span> 常量:</span><br><span class="line">        满足条件所执行的代码</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">case</span> 常量:</span><br><span class="line">        满足条件所执行的代码</span><br><span class="line">        <span class="keyword">break</span>;    </span><br><span class="line">    </span><br><span class="line">    <span class="literal">default</span>:</span><br><span class="line">        如果上面的条件都不满足 就会执行<span class="literal">default</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;    </span><br><span class="line"><span class="comment">//-------------------------------------------------</span></span><br><span class="line"><span class="keyword">switch</span> (变量)</span><br><span class="line">&#123;   </span><br><span class="line">    <span class="comment">//贯穿 变量 == 常量1 || 常量2  时执行break前的代码</span></span><br><span class="line">    <span class="keyword">case</span> 常量<span class="number">1</span>:  </span><br><span class="line">    <span class="keyword">case</span> 常量<span class="number">2</span>:</span><br><span class="line">        满足条件所执行的代码</span><br><span class="line">        <span class="keyword">break</span>;    </span><br><span class="line">    </span><br><span class="line">    <span class="literal">default</span>:</span><br><span class="line">        如果上面的条件都不满足 就会执行<span class="literal">default</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//——————————————————————————————————————————————————————————————————</span></span><br><span class="line"><span class="built_in">int</span> a = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">switch</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;a为1&quot;</span>)</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;a为2&quot;</span>)</span><br><span class="line">        <span class="keyword">break</span>;  </span><br><span class="line">        </span><br><span class="line">    <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;a为3&quot;</span>)</span><br><span class="line">        <span class="keyword">break</span>; </span><br><span class="line">        </span><br><span class="line">    <span class="literal">default</span>:</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;a不满足条件&quot;</span>)</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-keyword">switch</span> (变量)<br>&#123;<br>    <span class="hljs-comment">//变量==常量时执行case和break之间的代码     </span><br>    <span class="hljs-keyword">case</span> 常量:    <span class="hljs-comment">//常量，只能写固定的值 不能写范围 逻辑运算符等</span><br>        满足条件所执行的代码<br>        <span class="hljs-keyword">break</span>;<br>        <br>    <span class="hljs-keyword">case</span> 常量:<br>        满足条件所执行的代码<br>        <span class="hljs-keyword">break</span>;<br>        <br>    <span class="hljs-keyword">case</span> 常量:<br>        满足条件所执行的代码<br>        <span class="hljs-keyword">break</span>;    <br>    <br>    <span class="hljs-literal">default</span>:<br>        如果上面的条件都不满足 就会执行<span class="hljs-literal">default</span><br>        <span class="hljs-keyword">break</span>;<br>&#125;    <br><span class="hljs-comment">//-------------------------------------------------</span><br><span class="hljs-keyword">switch</span> (变量)<br>&#123;   <br>    <span class="hljs-comment">//贯穿 变量 == 常量1 || 常量2  时执行break前的代码</span><br>    <span class="hljs-keyword">case</span> 常量<span class="hljs-number">1</span>:  <br>    <span class="hljs-keyword">case</span> 常量<span class="hljs-number">2</span>:<br>        满足条件所执行的代码<br>        <span class="hljs-keyword">break</span>;    <br>    <br>    <span class="hljs-literal">default</span>:<br>        如果上面的条件都不满足 就会执行<span class="hljs-literal">default</span><br>        <span class="hljs-keyword">break</span>;<br><br><span class="hljs-comment">//——————————————————————————————————————————————————————————————————</span><br><span class="hljs-built_in">int</span> a = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">switch</span><br>&#123;<br>    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:<br>        Console.WriteLine(<span class="hljs-string">&quot;a为1&quot;</span>)<br>        <span class="hljs-keyword">break</span>;<br>        <br>    <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:<br>        Console.WriteLine(<span class="hljs-string">&quot;a为2&quot;</span>)<br>        <span class="hljs-keyword">break</span>;  <br>        <br>    <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:<br>        Console.WriteLine(<span class="hljs-string">&quot;a为3&quot;</span>)<br>        <span class="hljs-keyword">break</span>; <br>        <br>    <span class="hljs-literal">default</span>:<br>        Console.WriteLine(<span class="hljs-string">&quot;a不满足条件&quot;</span>)<br>        <span class="hljs-keyword">break</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h2 id="循环语句"><a class="markdownIt-Anchor" href="#循环语句">#</a> 循环语句</h2>
 <h3 id="for循环"><a class="markdownIt-Anchor" href="#for循环">#</a> For 循环</h3>
 <p>使用较多<br></p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//常用在计数循环</span></span><br><span class="line"><span class="keyword">for</span>(<span class="built_in">int</span> i =<span class="number">0</span>; i&lt;<span class="number">10</span>; ++i)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(i); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//————————————————————————</span></span><br><span class="line"><span class="comment">//死循环</span></span><br><span class="line"><span class="keyword">for</span>(;;)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;你好&quot;</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-comment">//常用在计数循环</span><br><span class="hljs-keyword">for</span>(<span class="hljs-built_in">int</span> i =<span class="hljs-number">0</span>; i&lt;<span class="hljs-number">10</span>; ++i)<br>&#123;<br>    Console.WriteLine(i); <br>&#125;<br><br><span class="hljs-comment">//————————————————————————</span><br><span class="hljs-comment">//死循环</span><br><span class="hljs-keyword">for</span>(;;)<br>&#123;<br>    Console.WriteLine(<span class="hljs-string">&quot;你好&quot;</span>); <br>&#125;<br></code></pre></td></tr></table></figure>
 <h3 id="while循环"><a class="markdownIt-Anchor" href="#while循环">#</a> While 循环</h3>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(<span class="built_in">bool</span>值)</span><br><span class="line">&#123;</span><br><span class="line">    满足条件时就会执行该语句块</span><br><span class="line">    执行玩会回到<span class="keyword">while</span>开头再次判断    </span><br><span class="line">&#125;    </span><br><span class="line"></span><br><span class="line"><span class="comment">//-------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//累加i到10</span></span><br><span class="line"><span class="built_in">int</span> i = <span class="number">0</span> ;</span><br><span class="line"><span class="keyword">while</span>(i&lt;<span class="number">10</span>)</span><br><span class="line">&#123;</span><br><span class="line">    ++i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-keyword">while</span>(<span class="hljs-built_in">bool</span>值)<br>&#123;<br>    满足条件时就会执行该语句块<br>    执行玩会回到<span class="hljs-keyword">while</span>开头再次判断    <br>&#125;    <br><br><span class="hljs-comment">//-------------------------------------</span><br><br><span class="hljs-comment">//累加i到10</span><br><span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span> ;<br><span class="hljs-keyword">while</span>(i&lt;<span class="hljs-number">10</span>)<br>&#123;<br>    ++i;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h3 id="do-while循环"><a class="markdownIt-Anchor" href="#do-while循环">#</a> do while 循环</h3>
 <p>用的比较少</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span></span><br><span class="line">&#123;</span><br><span class="line">   判断条件在后面 所以先执行一次本语句块代码再做判断</span><br><span class="line"></span><br><span class="line">&#125;<span class="keyword">while</span>(<span class="built_in">bool</span>值);</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-keyword">do</span><br>&#123;<br>   判断条件在后面 所以先执行一次本语句块代码再做判断<br><br>&#125;<span class="hljs-keyword">while</span>(<span class="hljs-built_in">bool</span>值);<br></code></pre></td></tr></table></figure>
 <h3 id="break跳出循环"><a class="markdownIt-Anchor" href="#break跳出循环">#</a> break：跳出循环</h3>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(<span class="literal">true</span>)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;break之前的代码&quot;</span>);  </span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;break之后的代码 不会被执行&quot;</span>);  </span><br><span class="line">&#125;    </span><br><span class="line">Console.WriteLine(<span class="string">&quot;循环外的代码&quot;</span>); </span><br><span class="line"></span><br><span class="line"><span class="comment">//----------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//累加i到10</span></span><br><span class="line"><span class="built_in">int</span> i = <span class="number">0</span> ;</span><br><span class="line"><span class="keyword">while</span>(<span class="literal">true</span>)</span><br><span class="line">&#123;</span><br><span class="line">    ++i;</span><br><span class="line">    <span class="keyword">if</span>(i==<span class="number">10</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">break</span>; <span class="comment">//这个时while的break</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)<br>&#123;<br>    Console.WriteLine(<span class="hljs-string">&quot;break之前的代码&quot;</span>);  <br>    <span class="hljs-keyword">break</span>;<br>    Console.WriteLine(<span class="hljs-string">&quot;break之后的代码 不会被执行&quot;</span>);  <br>&#125;    <br>Console.WriteLine(<span class="hljs-string">&quot;循环外的代码&quot;</span>); <br><br><span class="hljs-comment">//----------------------------------------------</span><br><br><span class="hljs-comment">//累加i到10</span><br><span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span> ;<br><span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)<br>&#123;<br>    ++i;<br>    <span class="hljs-keyword">if</span>(i==<span class="hljs-number">10</span>)<br>    &#123;<br>        <span class="hljs-keyword">break</span>; <span class="hljs-comment">//这个时while的break</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h3 id="continue回到循环开始"><a class="markdownIt-Anchor" href="#continue回到循环开始">#</a> continue：回到循环开始</h3>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> i = <span class="number">0</span> ;</span><br><span class="line"><span class="keyword">while</span>(<span class="literal">true</span>)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;continue之前的代码&quot;</span>); </span><br><span class="line">    <span class="keyword">continue</span>;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;continue之后的代码不会执行&quot;</span>); </span><br><span class="line">&#125;</span><br><span class="line">Console.WriteLine(<span class="string">&quot;循环外的代码不会执行&quot;</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span> ;<br><span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)<br>&#123;<br>    Console.WriteLine(<span class="hljs-string">&quot;continue之前的代码&quot;</span>); <br>    <span class="hljs-keyword">continue</span>;<br>    Console.WriteLine(<span class="hljs-string">&quot;continue之后的代码不会执行&quot;</span>); <br>&#125;<br>Console.WriteLine(<span class="hljs-string">&quot;循环外的代码不会执行&quot;</span>);<br></code></pre></td></tr></table></figure>
 <h2 id="补充内容"><a class="markdownIt-Anchor" href="#补充内容">#</a> 补充内容</h2>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//输入一个键并赋值</span></span><br><span class="line"><span class="built_in">char</span> c = Console.ReadKey().KeyChar;</span><br><span class="line"><span class="comment">//输入一个键并赋值 且不在控制台显示</span></span><br><span class="line"><span class="built_in">char</span> c = Console.ReadKey(<span class="literal">true</span>).KeyChar;</span><br><span class="line"><span class="comment">//清除控制台</span></span><br><span class="line">Console.Clear();</span><br><span class="line"><span class="comment">//设置光标位置 控制台左上角为0，0 右侧是x正方向 下方是y正方向</span></span><br><span class="line">Console.SetCursorPosition(<span class="number">10</span>,<span class="number">5</span>);</span><br><span class="line"><span class="comment">//设置文字颜色</span></span><br><span class="line">Console.ForegroundColor = ConsoleColor.Red;</span><br><span class="line"><span class="comment">//设置背景色 配合Clear使用 填充窗口颜色</span></span><br><span class="line">Console.BackgroundColor = ConsoleColor.White;</span><br><span class="line">Console.Clear();</span><br><span class="line"><span class="comment">//光标显隐</span></span><br><span class="line">Console.CursorVisible = <span class="literal">false</span>;</span><br><span class="line"><span class="comment">//关闭控制台</span></span><br><span class="line">Environment.Exit(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-comment">//输入一个键并赋值</span><br><span class="hljs-built_in">char</span> c = Console.ReadKey().KeyChar;<br><span class="hljs-comment">//输入一个键并赋值 且不在控制台显示</span><br><span class="hljs-built_in">char</span> c = Console.ReadKey(<span class="hljs-literal">true</span>).KeyChar;<br><span class="hljs-comment">//清除控制台</span><br>Console.Clear();<br><span class="hljs-comment">//设置光标位置 控制台左上角为0，0 右侧是x正方向 下方是y正方向</span><br>Console.SetCursorPosition(<span class="hljs-number">10</span>,<span class="hljs-number">5</span>);<br><span class="hljs-comment">//设置文字颜色</span><br>Console.ForegroundColor = ConsoleColor.Red;<br><span class="hljs-comment">//设置背景色 配合Clear使用 填充窗口颜色</span><br>Console.BackgroundColor = ConsoleColor.White;<br>Console.Clear();<br><span class="hljs-comment">//光标显隐</span><br>Console.CursorVisible = <span class="hljs-literal">false</span>;<br><span class="hljs-comment">//关闭控制台</span><br>Environment.Exit(<span class="hljs-number">0</span>);<br></code></pre></td></tr></table></figure>
 
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Technology/" class="category-chain-item">Technology</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Technology/" class="print-no-link">#Technology</a>
+      
+        <a href="/tags/Code/" class="print-no-link">#Code</a>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://clearacg.com/2024/01/26/CSharp%E5%85%A5%E9%97%A8/" data-id="cls0bmgni0006dbokh22w0nr7" data-title="CSharp入门" class="article-share-link"><span class="fa fa-share">分享</span></a>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>CSharp入门</div>
+      <div>https://clearacg.com/2024/01/26/CSharp入门/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Aki_CCLing</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年1月26日</div>
+        </div>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Code/" rel="tag">Code</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Technology/" rel="tag">Technology</a></li></ul>
-
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/2024/01/17/%E3%80%8C%E9%93%83%E8%8A%BD%E4%B9%8B%E6%97%85%E3%80%8D%E5%B1%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">「铃芽之旅」展</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ACGN/">ACGN</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Game/">Game</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Technology/">Technology</a></li></ul>
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
     </div>
+    <div class="license-icon iconfont"></div>
   </div>
 
 
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/01/17/%E3%80%8C%E9%93%83%E8%8A%BD%E4%B9%8B%E6%97%85%E3%80%8D%E5%B1%95/" title="「铃芽之旅」展">
+                        <span class="hidden-mobile">「铃芽之旅」展</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ACGN/" rel="tag">ACGN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Books/" rel="tag">Books</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Code/" rel="tag">Code</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Game/" rel="tag">Game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Technology/" rel="tag">Technology</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E4%B8%8B%E4%B8%BB%E9%A2%98%E5%B1%95/" rel="tag">线下主题展</a></li></ul>
-    </div>
-  </div>
-
-
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/ACGN/" style="font-size: 20px;">ACGN</a> <a href="/tags/Books/" style="font-size: 13.33px;">Books</a> <a href="/tags/Code/" style="font-size: 10px;">Code</a> <a href="/tags/Game/" style="font-size: 13.33px;">Game</a> <a href="/tags/Technology/" style="font-size: 13.33px;">Technology</a> <a href="/tags/%E7%BA%BF%E4%B8%8B%E4%B8%BB%E9%A2%98%E5%B1%95/" style="font-size: 16.67px;">线下主题展</a>
-    </div>
-  </div>
+    <article id="comments" lazyload>
+      
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://cdn.staticfile.org/twikoo/1.6.26/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"https://venerable-smakager-94ad33.netlify.app/.netlify/functions/twikoo","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              Fluid.utils.listenDOMLoaded(function() {
+                var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+                Fluid.plugins.imageCaption(imgSelector);
+                Fluid.plugins.fancyBox(imgSelector);
+              });
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
 
+
+    </article>
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">一月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">十月 2023</a></li></ul>
-    </div>
-  </div>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2024/01/26/CSharp%E5%85%A5%E9%97%A8/">CSharp入门</a>
-          </li>
-        
-          <li>
-            <a href="/2024/01/17/%E3%80%8C%E9%93%83%E8%8A%BD%E4%B9%8B%E6%97%85%E3%80%8D%E5%B1%95/">「铃芽之旅」展</a>
-          </li>
-        
-          <li>
-            <a href="/2024/01/16/baOutlineShowHalfAnn/">蔚蓝档案 - 半周年线下庆典</a>
-          </li>
-        
-          <li>
-            <a href="/2024/01/16/%E7%A2%A7%E8%93%9D%E8%88%AA%E7%BA%BF%E5%86%AC%E6%97%A5%E5%A5%87%E6%97%85%E5%B1%95/">碧蓝航线 - 冬日奇旅展</a>
-          </li>
-        
-          <li>
-            <a href="/2023/11/21/Bilibili-World-2023-%E6%80%BB%E7%BB%93%EF%BC%88%E6%94%BB%E7%95%A5%EF%BC%89/">Bilibili World 2023 总结（攻略）</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
+          </article>
+        </div>
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2024 Aki_CCLing<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
-  </div>
-</footer>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
 
     </div>
-    <nav id="mobile-nav">
+  </div>
+</div>
+
+
+
+
+
   
-    <a href="/" class="mobile-nav-link">Home</a>
+
+
+
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+
+
+
   
-</nav>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
     
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-<script src="/js/jquery-3.6.4.min.js"></script>
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://icp.gov.moe/?keyword=20238180" target="_blank">萌ICP备20238180号</a> <br/> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <span>&</span> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br/> <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>  <script language="javascript">  var now = new Date(); function createtime(){ var grt= new Date("10/02/2023 00:00:00");/*---这里是网站的启用时间--*/ now.setTime(now.getTime()+1000); days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} document.getElementById("timeDate").innerHTML = "Blog 已运行 "+dnum+" 天 "; document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; } setInterval("createtime()",1000);  </script> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+    <script  src="/js/img-lazyload.js" ></script>
+  
 
 
 
 
-<script src="/js/script.js"></script>
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
 
 
 
-  </div>
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>
