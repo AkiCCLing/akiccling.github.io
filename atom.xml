@@ -3,7 +3,7 @@
     <id>https://clearacg.com</id>
     <title>Secret Garden</title>
     <link href="https://clearacg.com" />
-    <updated>2024-01-30T19:36:37.888Z</updated>
+    <updated>2024-01-31T05:39:00.913Z</updated>
     <category term="ACGN" />
     <category term="Technology" />
     <category term="Code" />
@@ -11,9 +11,9 @@
     <category term="Game" />
     <category term="线下主题展" />
     <entry>
-        <id>https://clearacg.com/2024/01/30/hello-world/</id>
+        <id>https://clearacg.com/2024/01/31/hello-world/</id>
         <title>Hello World</title>
-        <link rel="alternate" href="https://clearacg.com/2024/01/30/hello-world/"/>
+        <link rel="alternate" href="https://clearacg.com/2024/01/31/hello-world/"/>
         <content type="html">&lt;p&gt;Welcome to &lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&#34;https://hexo.io/docs/&#34;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&#34;https://hexo.io/docs/troubleshooting.html&#34;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&#34;https://github.com/hexojs/hexo/issues&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;quick-start&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#quick-start&#34;&gt;#&lt;/a&gt; Quick Start&lt;/h2&gt;
 &lt;h3 id=&#34;create-a-new-post&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#create-a-new-post&#34;&gt;#&lt;/a&gt; Create a new post&lt;/h3&gt;
@@ -29,7 +29,7 @@
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs bash&#34;&gt;$ hexo deploy&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;More info: &lt;a href=&#34;https://hexo.io/docs/one-command-deployment.html&#34;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
 </content>
-        <updated>2024-01-30T19:36:37.888Z</updated>
+        <updated>2024-01-31T05:39:00.913Z</updated>
     </entry>
     <entry>
         <id>https://clearacg.com/2024/01/26/CSharp%E5%85%A5%E9%97%A8/</id>
