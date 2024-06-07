@@ -62,37 +62,6 @@
   
   
   <entry>
-    <title>Unity 网络开发</title>
-    <link href="/2024/03/07/forUnity/csharp/CSharpCore/"/>
-    <url>/2024/03/07/forUnity/csharp/CSharpCore/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    <categories>
-      
-      <category>Technology</category>
-      
-      <category>Unity</category>
-      
-      <category>C#</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Technology</tag>
-      
-      <tag>Code</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Unity - 数据持久化 - 二进制</title>
     <link href="/2024/03/07/forUnity/PersistenceData/PerBinary/"/>
     <url>/2024/03/07/forUnity/PersistenceData/PerBinary/</url>
@@ -291,6 +260,37 @@
       <category>Technology</category>
       
       <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Technology</tag>
+      
+      <tag>Code</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>CSharp 核心</title>
+    <link href="/2024/02/21/forUnity/csharp/CSharpCore/"/>
+    <url>/2024/02/21/forUnity/csharp/CSharpCore/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>Technology</category>
+      
+      <category>Unity</category>
+      
+      <category>C#</category>
       
     </categories>
     
