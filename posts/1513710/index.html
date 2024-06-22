@@ -174,12 +174,12 @@
 <p>由于每个人的云服务器商都不同，这里以腾讯云为例</p>
 </blockquote>
 <p>在腾讯云控制台实例的防火墙中添加规则：(端口号填Minecraft默认的25565，后面可修改)</p>
-<p><img src="https://s2.loli.net/2023/10/07/NEjkeF1hWwaQpCX.png" alt="图 1">  </p>
+<p><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/NEjkeF1hWwaQpCX.png" alt="图 1">  </p>
 <p>通过PuTTY连接主机，并输入以下指令</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=25565/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --add-port=25565/udp --permanent</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
 
 <h2 id="三、上传服务器文件"><a href="#三、上传服务器文件" class="headerlink" title="三、上传服务器文件"></a>三、上传服务器文件</h2><p>打开WinSCP，通过主机IP地址并输入用户名和口令进行连接，在右侧的文件目录中（如&#x2F;tmp&#x2F;minecraft）将server.jar拖进去上传到服务器中（此时目录中只有server.jar这一个文件）</p>
-<p><img src="https://s2.loli.net/2023/10/07/abUJqxHiIh2u1Tf.png" alt="图 2">  </p>
+<p><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/abUJqxHiIh2u1Tf.png" alt="图 2">  </p>
 <h2 id="四、安装-Java"><a href="#四、安装-Java" class="headerlink" title="四、安装 Java"></a>四、安装 Java</h2><p>1.先升级yum库</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum update</span><br></pre></td></tr></table></figure>
 
@@ -187,7 +187,7 @@
 <p>2.列出yum库中的Java</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y list java*</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://s2.loli.net/2023/10/07/vD8O4HaMQucxTp3.png" alt="图 3">  </p>
+<p><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/vD8O4HaMQucxTp3.png" alt="图 3">  </p>
 <p>3.安装Java</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install java-latest-openjdk*</span><br></pre></td></tr></table></figure>
 
@@ -209,13 +209,13 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /tmp/minecraft</span><br><span class="line">sh start.sh</span><br></pre></td></tr></table></figure>
 
 <p>经过一段时间等待，显示一下界面时就代表开服完毕了</p>
-<p><img src="https://s2.loli.net/2023/10/07/JF8enHv6qi1rW7B.png" alt="图 4">  </p>
+<p><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/JF8enHv6qi1rW7B.png" alt="图 4">  </p>
 <p>在PuTTY中按下Ctrl+A+D即可退出该screen作业，此时即可关闭PuTTY</p>
 <p>那么下次如何进入该screen呢？在PuTTY连接后，输入：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -ls</span><br></pre></td></tr></table></figure>
 
 <p>即可显示出当前的screen作业</p>
-<p><img src="https://s2.loli.net/2023/10/07/aI9GhMrnOfRQm7Z.png" alt="图 5">  </p>
+<p><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/aI9GhMrnOfRQm7Z.png" alt="图 5">  </p>
 <p>根据之前创建的screen名称，我们可以通过前面的数字进入该screen</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -r 27529</span><br></pre></td></tr></table></figure>
 
