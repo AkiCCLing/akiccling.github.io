@@ -1,0 +1,732 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Unity 模拟面试题 | Secret Garden</title><meta name="author" content="Aki_CCLing"><meta name="copyright" content="Aki_CCLing"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="C# 装箱和拆箱是什么？  值和引用类型在变量赋值时的区别是什么？  委托和事件在使用上的区别是什么？  有两个接口 IA 和 IB，他们中有一个同名方法 Test() 一个类同时继承这两个接口，应该如何处理他们的同名方法？  请说明 C#中的 List 是如何扩容的  请说说你认为 C#中 &#x3D;&#x3D; 和 Equals 的区别是什么？  浅拷贝和深拷贝的区别？可以举例说明  下面两">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unity 模拟面试题">
+<meta property="og:url" content="https://clearacg.com/posts/caa7b118/index.html">
+<meta property="og:site_name" content="Secret Garden">
+<meta property="og:description" content="C# 装箱和拆箱是什么？  值和引用类型在变量赋值时的区别是什么？  委托和事件在使用上的区别是什么？  有两个接口 IA 和 IB，他们中有一个同名方法 Test() 一个类同时继承这两个接口，应该如何处理他们的同名方法？  请说明 C#中的 List 是如何扩容的  请说说你认为 C#中 &#x3D;&#x3D; 和 Equals 的区别是什么？  浅拷贝和深拷贝的区别？可以举例说明  下面两">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/UNITY.jpg">
+<meta property="article:published_time" content="2024-03-09T13:47:27.000Z">
+<meta property="article:modified_time" content="2024-03-09T13:47:27.000Z">
+<meta property="article:author" content="Aki_CCLing">
+<meta property="article:tag" content="Technology">
+<meta property="article:tag" content="Unity">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/UNITY.jpg"><link rel="shortcut icon" href="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/202402221339492.webp"><link rel="canonical" href="https://clearacg.com/posts/caa7b118/index.html"><link rel="preconnect" href="https://cdn.staticfile.org"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//static.cloudflareinsights.com"/><link rel="preconnect" href="//www.clarity.ms"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/fancyapps-ui/5.0.33/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?6ec84f1c930ef67ebd0716b3d42538a0";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script defer="defer" data-pjax="data-pjax" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;8c2bdf8651d54d3a82a47995bcb6e5cc&quot;}"></script><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "mvz06k2itn");</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.staticfile.org/egjs-infinitegrid/4.11.1/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Unity 模拟面试题',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-09 13:47:27'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/style.css?1"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://pic.imgdb.cn/item/65b2a3e9871b83018a2fa6bd.webp" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fas fa-music"></i><span> 追番</span></a></li><li><a class="site-page child" href="/game/"><i class="fa-fw fas fa-video"></i><span> 游戏</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fa-solid fa-comments"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/UNITY.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Secret Garden"><span class="site-name">Secret Garden</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fas fa-music"></i><span> 追番</span></a></li><li><a class="site-page child" href="/game/"><i class="fa-fw fas fa-video"></i><span> 游戏</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fa-solid fa-comments"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Unity 模拟面试题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-03-09T13:47:27.000Z" title="发表于 2024-03-09 13:47:27">2024-03-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-09T13:47:27.000Z" title="更新于 2024-03-09 13:47:27">2024-03-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Technology/">Technology</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Technology/Unity/">Unity</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Unity 模拟面试题"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="C"><a href="#C" class="headerlink" title="C#"></a>C#</h1><ol>
+<li><p>装箱和拆箱是什么？</p>
+</li>
+<li><p>值和引用类型在变量赋值时的区别是什么？</p>
+</li>
+<li><p>委托和事件在使用上的区别是什么？</p>
+</li>
+<li><p>有两个接口 IA 和 IB，他们中有一个同名方法 Test() 一个类同时继承这两个接口，应该如何处理他们的同名方法？</p>
+</li>
+<li><p>请说明 C#中的 List 是如何扩容的</p>
+</li>
+<li><p>请说说你认为 C#中 &#x3D;&#x3D; 和 Equals 的区别是什么？</p>
+</li>
+<li><p>浅拷贝和深拷贝的区别？可以举例说明</p>
+</li>
+<li><p>下面两种获 10000 个数的方式，哪种效率更高？为什么?<br><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/202403091404471.webp?imageSlim"></p>
+</li>
+<li><p>请说出下方代码中</p>
+<pre><code>1.A处和B处谁先打印？
+
+2.A、B出打印的i值分别是多少？
+</code></pre>
+<p><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/202403091351186.webp?imageSlim"></p>
+</li>
+<li><p>请问 A、B 两处 i 的值为多少？<br><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/202403091406847.webp?imageSlim"><br><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/202403091405976.webp?imageSlim"></p>
+</li>
+<li><p>泛型的约束有哪几种？</p>
+</li>
+<li><p>什么是闭包？可以举例说明</p>
+</li>
+<li><p>内存泄漏指什么？常见的内存泄漏有哪些？</p>
+</li>
+<li><p>序列化是什么？常见的序列化方式有哪些？什么时候我们会用到序列化？</p>
+</li>
+<li><p>请问 A、B、C 三处打印结果分别为多少？为什么？<br><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/122433197650192447.png?imageSlim"></p>
+</li>
+<li><p>请说明字符串中<br>string str &#x3D; null<br>string str &#x3D; “”<br>string str &#x3D; string.Empty<br>三者的区别</p>
+</li>
+<li><p>C#重载运算符，重载 &#x3D;&#x3D; 和 !&#x3D; 以及<br>万物之父 Object 基类中的虚方法 virtual bool Equals(Object obj)<br>对于我们的意义是什么？</p>
+</li>
+<li><p>在开发时，对 string 和 StringBuilder 我们应该如何选择</p>
+</li>
+<li><p>请简要说明.Net 跨语言原理</p>
+</li>
+<li><p>请简要说明.Net 跨平台原理</p>
+</li>
+<li><p>以下代码，谁的效率更高？为什么？<br><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/152739b4e7bd643055.png?imageSlim"></p>
+</li>
+<li><p>数组和链表的区别是什么？</p>
+</li>
+<li><p>C# 中的 Action 和 Func 是什么？ Unity 中的 UnityAction 是什么？ 他们有什么区别？</p>
+</li>
+<li><p>请问最终的打印结果是什么？<br><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/15285680a043305127.png?imageSlim"><br><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/152856836e20264473.png?imageSlim"><br><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/152856865229028454.png?imageSlim"></p>
+</li>
+<li><p>网络游戏开发中，网络传输数据的基本流程是什么？</p>
+</li>
+<li><p>C#中如何让自定义容器类能够使用 for 循环遍历？（通过 类对象[索引] 的形式遍历）</p>
+</li>
+<li><p>C#中如何让自定义容器类能够使用 foreach 循环遍历？</p>
+</li>
+<li><p>C#中接口的作用是什么？说说你的理解</p>
+</li>
+<li><p>Unity 引擎中哪些功能使用了 C#的反射功能？至少说出一点</p>
+</li>
+<li><p>请问这三行代码，运行后，在堆上会分配几个“房间”<br><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/1509437a9a41943997.png?imageSlim"></p>
+</li>
+<li><p>C#中如何让一个类不能再被其他类所继承？</p>
+</li>
+<li><p>C#中使用泛型的好处是什么？</p>
+</li>
+<li><p>C#中元组对于我们的作用是什么？</p>
+</li>
+<li><p>请说明 Thread、ThreadPool、Task 分别是什么？并简单说明彼此的区别</p>
+</li>
+<li><p>请简述 GC（垃圾回收）产生的原因，并至少说出避免 GC 发生的三种方式？</p>
+</li>
+<li><p>如果我们想为 Unity 中的 Transform 类添加一个自定义的方法，应该如何处理？</p>
+</li>
+<li><p>请说出 using 关键字的两个作用</p>
+</li>
+<li><p>C#中 Dictionary 不支持相同键存储<br>如果想要一个键对应多个值如何处理？</p>
+</li>
+<li><p>请问下面代码的最终打印结果是什么？为什么？<br><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/1005266e9fd6307619.png?imageSlim"></p>
+</li>
+<li><p>上题中的代码，如果我们希望打印出 0~9，应该如何修改代码？</p>
+</li>
+<li><p>内存中，堆和栈的区别是什么？</p>
+</li>
+<li><p>TCP 协议和 UDP 协议的区别</p>
+</li>
+<li><p>TCP 协议的可靠性是如何达到的？</p>
+</li>
+<li><p>内存抖动指什么？如何避免内存抖动</p>
+</li>
+<li><p>buff 系统中，如何用一个 byte，记录多种 buff 状态标识</p>
+</li>
+<li><p>文件中保存了文本信息，但是打开后却是乱码，一般是什么原因造成的？</p>
+</li>
+<li><p>C#中 new 关键字的作用（至少说出 3 种）</p>
+</li>
+<li><p>同步方法和异步方法的区别是什么？<br>异步编程是什么意思？<br>对于我们来说，什么时候需要使用异步编程？（至少说出 3 种）</p>
+</li>
+<li><p>回调函数指什么？一般在什么时候使用？（至少说出 3 种使用场景）</p>
+</li>
+<li><p>如何用一个 int 变量，记录 32 种状态？（注意：状态可以并存）</p>
+</li>
+<li><p>List 是链表还是数组</p>
+</li>
+<li><p>上一题追问：<br>当 list 满了的时候，我再加入一个元素它的效率会比较低啊，它内部大概是一个什么样的执行过程呢？</p>
+</li>
+<li><p>csharp 里面有一个常用的接口叫做 IDispose，它的作用是？</p>
+</li>
+<li><p>上一题追问：<br>csharp 有垃圾回收机制，把一个对象设置为空的时候，系统会帮我们回收，它和接口 IDispose 有什么关系吗？为什么会存在两个做析构事情的东西呢？</p>
+</li>
+<li><p>Unity 中的生命周期函数，为什么设计为反射调用，而不是通过继承重写生命周期函数的形式去实现呢？（非字节题目，同学疑问，至少答出一种原因）</p>
+</li>
+<li><p>C#中哪些变量类型是值类型（至少说出 13 种），哪些是引用该类型（至少说出 5 种）</p>
+</li>
+<li><p>1.在自定义类中声明的成员变量，类型为 int，该 int 变量存储在栈上还是堆上？ 2.在自定义结构体中声明的成员变量，类型为 string，该 string 变量存储在栈上还是堆上？</p>
+</li>
+<li><p>C#中在什么情况下会选择使用接口，什么情况下会选择使用抽象类？</p>
+</li>
+<li><p>C#中什么是托管内存和非托管内存？</p>
+</li>
+<li><p>请问什么是线程安全？如何在 C#中实现线程安全操作？</p>
+</li>
+<li><p>C#中属性(Property)和字段(Field)的区别是什么？</p>
+</li>
+<li><p>请解释一下 C#中的异步编程模型（Async&#x2F;Await），它是用来做什么的？</p>
+</li>
+<li><p>请问七大排序算法一般指哪七种排序算法？<br>你一般常用的排序算法是哪种？请简单描述它的排序原理</p>
+</li>
+<li><p>请简单描述斐波那契数列的基本规则是什么</p>
+</li>
+<li><p>请简单描述 A 星寻路算法的基本原理</p>
+</li>
+<li><p>抽象类中的虚函数和抽象函数，是否必须在子类中重写？</p>
+</li>
+<li><p>当我们使用里式替换原则，用父类容器装载子类对象时<br>我们通过该父类容器调用其中的一个虚函数，执行的逻辑是父类中的还是子类中的逻辑呢？</p>
+</li>
+<li><p>我们在游戏开发时，想要获取系统时间，应该如何获取？</p>
+</li>
+<li><p>C#使用 var 声明临时变量相比用指定变量类型声明临时变量，在最终执行时是否会增加性能消耗？</p>
+</li>
+<li><p>int a &#x3D; 10;<br>int b &#x3D; a;<br>b &#x3D; 20;<br>我们知道，上述代码 b 改为 20 后，a 还是 10。（值类型的特点）<br>我们是否可以简单修改以上代码，让 b 变成 20 后，a 跟着一起变。<br>请说出修改方案</p>
+</li>
+<li><p>我们可以使用 C#中的迭代器来做什么？至少说出两点</p>
+</li>
+<li><p>面向对象的七大原则分别是什么？并选择其中一个原则说明它的意思</p>
+</li>
+<li><p>为什么单例模式在游戏开发中很常用？至少说出 3 个优点</p>
+</li>
+<li><p>工厂模式在游戏开发中一般用来做什么？</p>
+</li>
+<li><p>观察者设计模式在游戏开发中有什么作用？</p>
+</li>
+<li><p>递归函数是什么？请用一句话总结</p>
+</li>
+<li><p>在编写递归函数时，最需要关注的两点是什么？请说出你自己的理解</p>
+</li>
+<li><p>C#中如何在函数中返回多个返回值？（至少说出 3 种方法）</p>
+</li>
+<li><p>二分查找(折半查找)的原理是什么？</p>
+</li>
+<li><p>在游戏开发中，我们可以利用数据结构中的树参与哪些功能的制作？（至少说出 3 点）</p>
+</li>
+<li><p>父类中定义了一个静态成员属性，有两个子类都继承该父类，请问打印结果是什么？为什么<br><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/10232915192c466909.png?imageSlim"></p>
+</li>
+<li><p>泛型父类中定义了一个静态成员属性，有两个子类都继承该泛型父类，请问打印结果是什么？为什么<br><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/102357d97254939674.png?imageSlim"></p>
+</li>
+<li><p>使用 C#制作游戏存档功能，请问有几种做法？（至少说出三种）</p>
+</li>
+<li><p>C#中是否可以通过反射获取到类内部的私有成员？</p>
+</li>
+<li><p>在制作游戏存档功能时<br>C#中反射主要可以发挥出哪些作用（至少说出三点）</p>
+</li>
+<li><p>float f &#x3D; 10.4;<br>int i &#x3D; f &#x2F; 2;<br>Console.WriteLine(i);</p>
+<p>请问上面这段代码的打印结果是多少？</p>
+</li>
+<li><p>在 C#当中，我们想要用一个字典容器存储场景中的所有敌对对象<br>比如 怪物、Boss、可被攻击的场景物件等等<br>应该如何存储</p>
+</li>
+<li><p>在 C#中，给你一个数字，表示有 n 秒<br>请问如何在不改变这个数字的前提下<br>将它转换成格式为 <strong>小时</strong>分__秒</p>
+</li>
+<li><p>请问执行以上代码后，List 中还存在哪些内容？<img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/1837299d071d164453.png?imageSlim"></p>
+</li>
+<li><p>假设游戏中有一个怪物管理器管理所有怪物，那么在开发时，为了避免内存泄漏，我们需要注意什么？</p>
+</li>
+<li><p>C#类中的函数是否占用内存空间？</p>
+</li>
+<li><p>C#中的函数是何时被加载到内存中的呢？</p>
+</li>
+<li><p>C#函数中一般会声明一些临时变量，当函数被加载内存中后</p>
+<p>所占的内存空间是否包含函数中的这些临时变量？</p>
+</li>
+<li><p>C#中委托的本质是什么？<br>它是如何存储函数的？</p>
+</li>
+<li><p>C#中事件的本质是什么？</p>
+</li>
+<li><p>为什么要为缓存池中的单个池子设置对象上限？</p>
+</li>
+<li><p>任务系统中，某任务是要采集某一种植物 n 株后才能完成。<br>说一说制作思路</p>
+</li>
+<li><p>有两个泛型类，他们是父子关系<br>public Father&lt;Father<int>&gt; Test()<br>{<br>return new Son&lt;Son<int>&gt;();<br>}<br>这个写法是否正确？<br><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/135550688865275729.png?imageSlim"></p>
+</li>
+<li><p>数据结构中的树，一般会在游戏开发中用来处理什么？至少说出 3 点</p>
+</li>
+<li><p>游戏开发中逻辑与表现如何分离？非 UI 系统</p>
+</li>
+<li><p>C#中在字符串前面加一个@符号或者$符号有什么作用</p>
+</li>
+<li><p>C#中提供了序列化和反序列化 2 进制数据的公共类 BinaryFormatter<br>为什么我们一般还要自己去实现序列化和反序列化 2 进制数据的方法？</p>
+</li>
+<li><p>异或加密的原理是什么？请简要说明</p>
+</li>
+<li><p>这个函数是判断一个整数是不是 2 的 n 次方。请问 if 语句中应该如何书写<br><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/1933211cc3bd822714.png?imageSlim"></p>
+</li>
+<li><p>有 1000 瓶水其中一瓶是有毒的，喝下后 24 小时后才死，现在用小白鼠来测试哪一瓶有毒。最少需要用多 少只小白鼠才能测出哪一瓶是有毒的水（需要在 24 小时后出结果，不能用几天时间来测试）</p>
+</li>
+<li><p>int[,] strArray &#x3D; new int[3, 4]这个语句创建了多少个 int 对象？<br>string[,] strArray &#x3D; new string[3, 4]这个语句创建了多少个 string 对象？</p>
+</li>
+<li><p>为什么我们要尽量避免装箱拆箱？避免装箱拆箱的方案有哪些？</p>
+</li>
+<li><p>为什么说闭包可能会带来内存泄漏？</p>
+</li>
+<li><p>单机游戏中，我们如何避免玩家利用修改器修改客户端数据？（至少说出 2 点方案）</p>
+</li>
+<li><p>网络游戏中，我们如何避免外挂的产生？（至少说出 2 点方案）</p>
+</li>
+<li><p>value1 和 value2 谁先初始化</p>
+</li>
+</ol>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Main1</span></span><br><span class="line">&#123;</span><br><span class="line">     <span class="keyword">static</span> <span class="built_in">object</span> value1;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">static</span> <span class="title">Main1</span>()</span></span><br><span class="line">     &#123;</span><br><span class="line">          value1 = <span class="keyword">new</span> <span class="built_in">object</span>();</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">static</span> <span class="built_in">object</span> value2 = <span class="keyword">new</span> <span class="built_in">object</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="112">
+<li><p>C#中数值在调用 ToString()方法时，若传入字符串参数，有哪些格式转换规则？（至少说出 3 点）</p>
+</li>
+<li><p>C#中 ulong 类型可以表示最大的整数为多少？<br>   C#中的 BigInteger 类对于我们来说有什么意义？</p>
+</li>
+<li><p>C#中如何把 int 数组转换为 string 数组？（请至少说出 2 种方式）</p>
+</li>
+<li><p>为什么我们使用单例模式更多，而几乎不使用静态类？</p>
+</li>
+<li><p>C#中常用的命名规范有哪些？（至少说出 3 种）</p>
+</li>
+<li><p>C#编程中常见的内存管理问题有哪些？</p>
+</li>
+<li><p>在 Unity 中使用 C#的 foreach 是否会带来额外内存和性能开销？</p>
+</li>
+<li><p>在游戏开发中的日志系统一般会配合 C#中的什么一起使用？用于记录报错信息</p>
+</li>
+<li><p>对于一个 ARPG 游戏来说，如何设计技能配置表，请简要描述<br>（比如：大概需要配置几张表，分别配置什么信息）</p>
+</li>
+</ol>
+<h1 id="Unity"><a href="#Unity" class="headerlink" title="Unity"></a>Unity</h1><ol>
+<li><p>Unity 中点乘和叉乘对于我们来说的作用是什么？</p>
+</li>
+<li><p>Unity 中多线程执行下面哪些代码会报错？</p>
+<p>A. Application.persistentDataPath</p>
+<p>B. File.Exists(“文件名”)</p>
+<p>C. transform.Translate</p>
+<p>D. Object.Destroy(对象)</p>
+</li>
+<li><p>Application.streamingAssetsPath 和 Application.persistentDataPath</p>
+<p>两个路径有何区别？对于我们的意义是什么？</p>
+</li>
+<li><p>请简述 Unity 中协程的原理</p>
+</li>
+<li><p>Unity 底层如何处理 C#代码？</p>
+</li>
+<li><p>Unity 中当一个细小高速物体撞击另一个较大物体时，会出现什么情况？如何避免？</p>
+</li>
+<li><p>请简述一下 Prefab（预制体）的本质是什么？</p>
+</li>
+<li><p>Unity 是否支持写成多线程程序？如果支持的话需要注意什么？</p>
+</li>
+<li><p>请简述一下对象池，在游戏开发中我们什么时候会用到它？</p>
+</li>
+<li><p>什么是 DrawCall？DrawCall 为什么会影响游戏运行效率？如何减少 DrawCall？</p>
+</li>
+<li><p>transform.forward 和 Vector3.forword 的区别</p>
+</li>
+<li><p>Unity 中如何解决过多创建和删除对象带来的卡顿问题？</p>
+</li>
+<li><p>游戏中的成就系统，我们一般会使用设计模式中的哪种模式来制作？为什么？</p>
+</li>
+<li><p>请简述热更新的流程</p>
+</li>
+<li><p>我们应该如何优化 UI（基于 UGUI）</p>
+</li>
+<li><p>Unity 中的 Destroy 和 DestroyImmediate 的区别是什么？</p>
+</li>
+<li><p>请问最终打印的 s 的结果为？<br><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/110519f514df265137.png?imageSlim"></p>
+</li>
+<li><p>第一次执行 GameObject.Instantiate 时可能出现明显的卡顿<br>如何解决该问题？</p>
+</li>
+<li><p>Lua 如何实现面向对象的三大特性？</p>
+</li>
+<li><p>Unity 使用 IL2CPP 打包时，我们应该注意什么？如何避免（可以举例说明）</p>
+</li>
+<li><p>两个四元数相乘有什么作用？<br>四元数乘以向量有什么作用？</p>
+</li>
+<li><p>图中的小球是否被渲染了？是否会产生 DrawCall？<br><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/15300089f9be758726.png?imageSlim"></p>
+</li>
+<li><p>在没有使用遮挡剔除的情况下，图中 A 和 B 都是默认标准材质<br>图中的小球最终是否会被渲染，是否会产生 DrawCall<br><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/1530422643b5219941.png?imageSlim"></p>
+</li>
+<li><p>如果不考虑 IOS 平台，只在 Windows 和 Android 平台上发布游戏，如何在不使用第三方热更新方案的前提下实现热更新功能</p>
+</li>
+<li><p>Unity 中如何调试排查 Android 上运行的项目问题</p>
+</li>
+<li><p>Unity 中 Awake 和 Start 两个生命周期函数，分别在什么时候被调用？</p>
+</li>
+<li><p>Unity 场景上有多个对象，都分别挂载了 n 个脚本。<br>我们如何控制不同脚本间生命周期函数 Awake 的执行先后顺序？</p>
+</li>
+<li><p>想要在 Unity 中使用指针我们需要进行哪些操作？</p>
+</li>
+<li><p>Unity 中的协同程序中 yield return 不同的内容，代表的含义不同<br>请说明下面这些 yield return 的含义<br>1.yield return 数字;<br>2.yield return null;<br>3.yield return new WaitForSeconds(数字);<br>4.yield return new WaitForFixedUpdate();<br>5.yield return new WaitForEndOfFrame();<br>6.yield break;</p>
+</li>
+<li><p>使用 Unity 协同程序进行异步加载时，底层是否会使用多线程？</p>
+</li>
+<li><p>Unity 中动态加载资源的方式有哪些？</p>
+</li>
+<li><p>Unity 中的光照贴图的作用是什么？</p>
+</li>
+<li><p>Unity 场景中有两个点连成了一条线，想要旋转这条线，应该怎么做？</p>
+</li>
+<li><p>LOD（多细节层次）和 MipMap（纹理图）的作用是什么？</p>
+</li>
+<li><p>游戏开发中，客户端和服务端交互数据，程序中常用方式是什么？</p>
+</li>
+<li><p>Unity 中如何将本地坐标转为世界坐标？</p>
+</li>
+<li><p>Unity 中如何计算出两个向量之间的夹角，请说出两种方式</p>
+</li>
+<li><p>请写出 UGUI 中两种处理异形按钮的具体方法</p>
+</li>
+<li><p>请说出 Unity 中如何进行数据持久化，至少说出 5 种方式</p>
+</li>
+<li><p>在 Unity 中如何控制渲染优先级？（谁先渲染谁后渲染，分情况回答）</p>
+</li>
+<li><p>Unity 中判断两个 2D 矩形是否相交，有几种方式？（请至少说出两种方式）</p>
+</li>
+<li><p>Unity 中想要制作角色的连招功能，在制作状态机时我们一般如何处理？</p>
+</li>
+<li><p>Unity 中如果想要在动作的某一时刻进行伤害检测，我们应该怎么做？（请说出两种做法）</p>
+</li>
+<li><p>Unity 中想要制作自动寻路逻辑，我们应该怎么做？（请至少说出两种做法）</p>
+</li>
+<li><p>游戏编辑器（比如 角色编辑器、关卡编辑器、地图编辑器等工具）的本质是什么？</p>
+</li>
+<li><p>Unity 中使用的是左手还是右手坐标系？我们需要注意什么？</p>
+</li>
+<li><p>Unity 中鼠标、键盘、触屏、手柄等输入事件会在 Update 之前、还是之后、还是同时执行？</p>
+</li>
+<li><p>Unity 中场景中一个处于激活状态的物体(场景上只有这一个物体)，不能被摄像机渲染出来，可能有几种情况？（至少说出 3 种可能的情况）</p>
+</li>
+<li><p>Unity 制作物理游戏相关功能时，我们采用哪种方式处理位移？为什么？</p>
+</li>
+<li><p>Unity 热更新解决方案中，Lua 和 ILRuntime 方案的本质是什么？</p>
+</li>
+<li><p>请解释 Unity 中的 Prefab 是什么，以及它在游戏开发中的作用是什么？</p>
+</li>
+<li><p>在 Unity 中，什么是 Shader？它有什么作用，以及如何编写一个基本的 Shader？</p>
+</li>
+<li><p>在 Unity 中，什么是常见的性能优化技巧？请举例说明。</p>
+</li>
+<li><p>在 Unity 中，什么是协程（Coroutine）？它有什么作用，以及如何使用它？</p>
+</li>
+<li><p>解释一下 Unity 中的渲染管线（Rendering Pipeline）是什么，如何使用它，并举例说明它在游戏开发中的应用场景。</p>
+</li>
+<li><p>CPU 和 GPU 他们分别是什么？<br>他们主要完成什么工作</p>
+</li>
+<li><p>渲染管线中的几何阶段是由 CPU 主导还是 GPU 主导？该阶段主要是在做什么？</p>
+</li>
+<li><p>是不是所有矩阵都有逆矩阵？<br>如何计算一个矩阵的逆矩阵？</p>
+</li>
+<li><p>齐次坐标是什么?<br>对于我们有什么作用？</p>
+</li>
+<li><p>Shader 开发中的坐标空间变换，主要是在哪几个空间中进行变换？变换顺序是什么？</p>
+</li>
+<li><p>Unity 中的 Lerp 和 Slerp 分别是什么？</p>
+</li>
+<li><p>Unity 底层是单线程还是多线程</p>
+</li>
+<li><p>如何在 Unity 中实现多语言支持？<br>（不同国家的人，看到的游戏内的语言是不一样的）</p>
+</li>
+<li><p>Shader 当中的顶点和片元着色器有什么作用？</p>
+</li>
+<li><p>Unity 目前版本中创建的普通项目、URP 项目、HDRP 项目的区别是什么？</p>
+</li>
+<li><p>在 Unity 中，有时在第一次执行 GameObject.Instantiate 的时候有明显卡顿，该怎么解决？</p>
+</li>
+<li><p>在 Unity 中 AssetBundle 的压缩方式有不压缩、LZMA、LZ4 三种，请问 LZMA 和 LZ4 有什么区别？</p>
+</li>
+<li><p>Unity 中 DrawCall、Batches、SetPass Calls 的意思是什么<br><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/13414378ff63815403.png?imageSlim"></p>
+</li>
+<li><p>Unity Shader 中，深度测试是在做什么？</p>
+</li>
+<li><p>Unity Shader 中<br>某片元通过了深度测试，但是没有开启深度写入，该片元的颜色信息是否写入到颜色缓冲区？</p>
+</li>
+<li><p>Unity 中摄像机组件中的投影(Projection)参数<br>其中的两个选项<br>透视投影（Perspective）和 正交投影（Orthographic）<br>有什么区别？</p>
+</li>
+<li><p>FSM 和 BT 指什么？<br>他们是用来处理什么的？</p>
+</li>
+<li><p>10000 个 monobehavior，每个各自执行 update，和放到一个 update 里执行，哪个效率更高？<br>为什么？</p>
+</li>
+<li><p>我们在编写代码时，有什么常用的优化代码性能的手段？至少说出 3 点</p>
+</li>
+<li><p>OpenGL 和 DX 的最大区别是什么？</p>
+</li>
+<li><p>Unity 工程文件中，meta 后缀的文件中主要存了什么信息？（最少说出 2 点）</p>
+</li>
+<li><p>不同后缀的各种文件的本质是什么？</p>
+</li>
+<li><p>UnityWebRequest 可以用来做什么？</p>
+</li>
+<li><p>如何在 Unity 中进行多线程编程以提高性能？（至少说出 3 点可以使用多线程提高性能的内容）</p>
+</li>
+<li><p>游戏开发完成后 1.游戏运行卡顿、设备发热一般往哪个大方向进行排查？ 2.游戏运行一段时间后闪退，一般往哪个大方向进行排查？</p>
+</li>
+<li><p>你之前做过一些项目<br>那么一般美术同学提供给我们的美术资源，一般分为哪几类？</p>
+</li>
+<li><p>美术同学提供给我们的模型数据中，包含哪些关键数据？（至少说出 3 点）</p>
+</li>
+<li><p>游戏项目中，运行时主要占内存的内容有哪些？（至少说出 5 点）</p>
+</li>
+<li><p>游戏项目中，主要消耗性能的内容有哪些？（至少说出 3 点）</p>
+</li>
+<li><p>网络游戏中，有一个数据统计界面，这些数据是由最近 1000 场战斗计算出来的平均数据</p>
+<p>你认为以下处理方式合理吗？如果不合理，应该如何改进？<br>我们通过向后端请求这 1000 场战斗的数据，然后在客户端计算相关平均数据，更新显示到统计界面上</p>
+</li>
+<li><p>如果在 Unity 当中制作 FPS 游戏，如何模拟枪械开枪时的后坐力</p>
+</li>
+<li><p>Unity 当中存在多线程时，继承 MonoBehaviour 的脚本是否有必要对其中内容加锁？为什么？</p>
+</li>
+<li><p>我们在 Unity 中进行一些复杂逻辑处理时，比如网路通讯、寻路算法<br>往往会开启多线程进行处理。<br>我们如何保证数据能够和 Unity 主线程进行正常交互？（请至少说出 1 种方式）</p>
+</li>
+<li><p>Shader 当中的 Blend 渲染命令主要用来干什么？</p>
+</li>
+<li><p>Shader 当中的 Blend 渲染命令后面跟的参数是用来干嘛的？<br>比如：<br>Blend SrcAlpha OneMinusSrcAlpha</p>
+</li>
+<li><p>Unity 生命周期函数中的 OnEnable 和 Start，我们在使用时应该如何选择？<br>可以举例说明</p>
+</li>
+<li><p>如果你要开发一个项目<br>Assetbundle 和 Addressables 你会如何选择？</p>
+</li>
+<li><p>网络通讯中分包黏包指的是什么？<br>我们应该如何解决这些问题？</p>
+</li>
+<li><p>TCP 和 UDP 通讯最大的区别是什么？</p>
+</li>
+<li><p>如果想要让 UDP 通讯具备 TCP 的优点，应该如何处理？</p>
+</li>
+<li><p>Unity 在发布 Android 平台项目时，</p>
+<p>在加载 Application.streamingAssetsPath 中文件时我们应该注意什么？</p>
+</li>
+<li><p>Unity 中安卓主流的纹理压缩格式 ETC 和 ETC2 的主要区别是什么？</p>
+</li>
+<li><p>Android 平台常用压缩格式 ETC 不支持透明通道，那我们的半透明纹理应该如何处理？</p>
+</li>
+<li><p>Unity 中针对 IOS 平台我们使用的主流纹理压缩格式是什么？</p>
+</li>
+<li><p>请问为什么延迟渲染路径能够优化有大量光源的场景渲染</p>
+</li>
+<li><p>什么是纹理映射？</p>
+</li>
+<li><p>IK（逆运动学）可以帮助我们完成什么功能？</p>
+</li>
+<li><p>Unity 中为 Sprite 前后关系排序的常用方式有哪些？（至少说出 3 种）</p>
+</li>
+<li><p>请介绍一些在 Unity 中减少内存的方法。（至少说出 3 种方法）</p>
+</li>
+<li><p>请介绍一些在 Unity 中提升性能的方法（至少说出 5 种方法）</p>
+</li>
+<li><p>有 1000 瓶水其中一瓶是有毒的，喝了马上死，现在用小白鼠来测试哪一瓶有毒。最少需要用多少只小白鼠才能测出哪一瓶是有毒的水</p>
+</li>
+<li><p>如何为 UGUI 中的某一个控件添加自定义事件监听（比如为一个 Image 添加点击事件）</p>
+</li>
+<li><p>我们在进行 UI 开发时，每个面板都会有很多控件（Button、Toggle、Slider 等等）<br>每新写一个面板逻辑，都会为这些控件做一些相同的事情，比如：<br>声明控件、查找控件、监听控件等等<br>请问：我们应该如何提升我们的开发效率，让这些事情不用每次都去做？<br>（至少说出两种方案）</p>
+</li>
+<li><p>正交矩阵的基本概念是什么？<br>它对我们来说有什么意义？</p>
+</li>
+<li><p>Shader 和材质球的关系是什么？</p>
+</li>
+<li><p>Transform 中的本地坐标系的方向 转换 为相对世界坐标系的方向 的两个 API<br>TransformVector() 和 TransformDirection()<br>有什么区别？</p>
+</li>
+<li><p>lua 语言中的 upvalue 是什么？</p>
+</li>
+<li><p>该 Unity 中的报错是什么意思？如何定位该问题？我们一般如何排查解决该问题？（至少说出 2 种方案）<br><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/210415f4a249896758.png?imageSlim"></p>
+</li>
+<li><p>在 Android 平台上运行的项目出现问题，我们有几种调试的方式？<br>（至少说出 3 种方案，不使用第三方插件）</p>
+</li>
+<li><p>使用 UnityWebRequest 加载音效文件，应该使用什么 API？</p>
+</li>
+<li><p>Untiy 中的 PlayerPrefs 支持存储什么类型的数据？<br>为什么我们一般不会使用它来制作角色数据存档功能？</p>
+</li>
+<li><p>在进行数据持久化时（存档、数据存储等功能时）<br>如果使用<br>Unity 中的 JsonUtility（Json）<br>C#中的 BinaryFormatter（2 进制）和 XmlSerializer （xml）<br>这些公共类进行序列化和反序列化时<br>如果在反序列化时，对应的数据结构类发生变化了，是否影响数据的读取？</p>
+</li>
+<li><p>游戏在设备上运行时，出现崩溃闪退现象，排查方向有哪些？（至少说出 2 点）</p>
+</li>
+<li><p>游戏在设备上运行时，出现卡顿掉帧现象，排查方向有哪些？（至少说出 2 点）</p>
+</li>
+<li><p>在进行游戏开发时，我们一般如何测试项目在目标设备的最大内存上限和性能上限？</p>
+</li>
+<li><p>Unity 中如果想要改变物理系统中默认重力的方向或大小，应该在哪里修改？</p>
+</li>
+<li><p>Unity 中动态批处理和静态批处理的区别？</p>
+</li>
+<li><p>Unity 发布后的应用程序的美术表现效果比在编辑器中看起来差，可能原因有哪些？</p>
+</li>
+<li><p>Unity 中线性颜色空间和伽马颜色空间的主要区别是什么？</p>
+</li>
+<li><p>为什么线性的表现效果更好，Unity 默认还是使用的伽马呢？</p>
+</li>
+</ol>
+<h1 id="Lua"><a href="#Lua" class="headerlink" title="Lua"></a>Lua</h1><ol>
+<li><p>请说出 Lua 中常用的数据类型（至少说出 6 种）</p>
+</li>
+<li><p>Lua 中 pairs 和 ipairs 的区别</p>
+</li>
+<li><p>Lua 中常用的元方法有哪些？至少说出 3 个原方法</p>
+</li>
+<li><p>Lua 中元表的作用</p>
+</li>
+<li><p>Lua 中 __index 和 __newindex 有什么作用</p>
+</li>
+</ol>
+<!-- flag of hidden posts --></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://clearacg.com">Aki_CCLing</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://clearacg.com/posts/caa7b118/">https://clearacg.com/posts/caa7b118/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://clearacg.com" target="_blank">Secret Garden</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Technology/">Technology</a><a class="post-meta__tags" href="/tags/Unity/">Unity</a></div><div class="post_share"><div class="social-share" data-image="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/UNITY.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.staticfile.org/butterfly-extsrc/1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.staticfile.org/butterfly-extsrc/1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/978bdfbc/" title="Unity 学习路线"><img class="cover" src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/UNITY.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-05</div><div class="title">Unity 学习路线</div></div></a></div><div><a href="/posts/ac98fa8d/" title="Unity 面试题 &amp; 日常问题"><img class="cover" src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/UNITY.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-18</div><div class="title">Unity 面试题 &amp; 日常问题</div></div></a></div><div><a href="/posts/b8d84677/" title="Git常用操作"><img class="cover" src="https://pic.imgdb.cn/item/65b2a2ed871b83018a2d55de.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-16</div><div class="title">Git常用操作</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://pic.imgdb.cn/item/65b2a3e9871b83018a2fa6bd.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Aki_CCLing</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/AkiCCLing" target="_blank" title="GitHub"><i class="fa-brands fa-github" style="color: #1E3050;"></i></a><a class="social-icon" href="https://space.bilibili.com/5840406" target="_blank" title="Bilibili"><i class="fa-brands fa-bilibili" style="color: #FF6699;"></i></a><a class="social-icon" href="https://steamcommunity.com/id/AKIYC/" target="_blank" title="Steam"><i class="fa-brands fa-steam" style="color: #1E3050;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">一个ACGN爱好者的Blog，有问题与我交流可在Bilibili 留言 / 私信，谢谢你的关注。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C"><span class="toc-number">1.</span> <span class="toc-text">C#</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Unity"><span class="toc-number">2.</span> <span class="toc-text">Unity</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lua"><span class="toc-number">3.</span> <span class="toc-text">Lua</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/56e313ff/" title="国内二次元展会概览 &amp; 逛展推荐"><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/qungz.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="国内二次元展会概览 &amp; 逛展推荐"/></a><div class="content"><a class="title" href="/posts/56e313ff/" title="国内二次元展会概览 &amp; 逛展推荐">国内二次元展会概览 &amp; 逛展推荐</a><time datetime="2024-07-19T21:09:03.000Z" title="发表于 2024-07-19 21:09:03">2024-07-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/f402069a/" title="国内二次元周边市场 &amp; 购买周边指南"><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/noet8h3s.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="国内二次元周边市场 &amp; 购买周边指南"/></a><div class="content"><a class="title" href="/posts/f402069a/" title="国内二次元周边市场 &amp; 购买周边指南">国内二次元周边市场 &amp; 购买周边指南</a><time datetime="2024-07-19T21:08:42.000Z" title="发表于 2024-07-19 21:08:42">2024-07-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/54cf6201/" title="近期上海线下活动一览"><img src="https://pic.imgdb.cn/item/65b2a2b1871b83018a2cc638.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="近期上海线下活动一览"/></a><div class="content"><a class="title" href="/posts/54cf6201/" title="近期上海线下活动一览">近期上海线下活动一览</a><time datetime="2024-06-23T13:40:54.000Z" title="发表于 2024-06-23 13:40:54">2024-06-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/ac98fa8d/" title="Unity 面试题 &amp; 日常问题"><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/UNITY.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unity 面试题 &amp; 日常问题"/></a><div class="content"><a class="title" href="/posts/ac98fa8d/" title="Unity 面试题 &amp; 日常问题">Unity 面试题 &amp; 日常问题</a><time datetime="2024-06-18T21:34:41.000Z" title="发表于 2024-06-18 21:34:41">2024-06-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/b6a2633a/" title="关于我在 2023 年收获了哪些 ACGN 周边"><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/qungz.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于我在 2023 年收获了哪些 ACGN 周边"/></a><div class="content"><a class="title" href="/posts/b6a2633a/" title="关于我在 2023 年收获了哪些 ACGN 周边">关于我在 2023 年收获了哪些 ACGN 周边</a><time datetime="2024-02-15T00:21:32.000Z" title="发表于 2024-02-15 00:21:32">2024-02-15</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Aki_CCLing</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="https://icp.gov.moe/?keyword=20238180" target="_blank">萌ICP备20238180号</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.staticfile.org/fancyapps-ui/5.0.33/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://venerable-smakager-94ad33.netlify.app/.netlify/functions/twikoo',
+      region: 'ap-shanghai',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://venerable-smakager-94ad33.netlify.app/.netlify/functions/twikoo',
+      region: 'ap-shanghai',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else getScript('https://cdn.staticfile.org/twikoo/1.6.31/twikoo.all.min.js').then(init)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
