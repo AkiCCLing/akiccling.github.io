@@ -10,13 +10,121 @@
 <meta property="article:tag" content="Technology">
 <meta property="article:tag" content="Code">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/UNITY.jpg"><link rel="shortcut icon" href="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/202402221339492.webp"><link rel="canonical" href="https://clearacg.com/posts/2b56fa81/index.html"><link rel="preconnect" href="https://cdn.staticfile.org"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//static.cloudflareinsights.com"/><link rel="preconnect" href="//www.clarity.ms"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/fancyapps-ui/5.0.33/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+<meta name="twitter:image" content="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/UNITY.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Unity 网络开发",
+  "url": "https://clearacg.com/posts/2b56fa81/",
+  "image": "https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/UNITY.jpg",
+  "datePublished": "2024-03-07T15:48:31.000Z",
+  "dateModified": "2024-03-07T15:48:31.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Aki_CCLing",
+      "url": "https://clearacg.com/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/202402221339492.webp"><link rel="canonical" href="https://clearacg.com/posts/2b56fa81/index.html"><link rel="preconnect" href="https://cdn.staticfile.org"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//static.cloudflareinsights.com"/><link rel="preconnect" href="//www.clarity.ms"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.3.5"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.7.2/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
   hm.src = "https://hm.baidu.com/hm.js?6ec84f1c930ef67ebd0716b3d42538a0";
-  var s = document.getElementsByTagName("script")[0]; 
+  var s = document.getElementsByTagName("script")[0];
   s.parentNode.insertBefore(hm, s);
 })();
+btf.addGlobalFn('pjaxComplete', () => {
+  _hmt.push(['_trackPageview',window.location.pathname])
+}, 'baidu_analytics')
 </script><script defer="defer" data-pjax="data-pjax" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;8c2bdf8651d54d3a82a47995bcb6e5cc&quot;}"></script><script>(function(c,l,a,r,i,t,y){
     c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
     t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
@@ -26,18 +134,17 @@
   algolia: undefined,
   localSearch: undefined,
   translate: undefined,
-  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
-  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
   copy: {
     success: '复制成功',
-    error: '复制错误',
+    error: '复制失败',
     noSupport: '浏览器不支持'
   },
   relativeDate: {
     homepage: true,
     post: false
   },
-  runtime: '天',
+  runtime: '',
   dateSuffix: {
     just: '刚刚',
     min: '分钟前',
@@ -46,14 +153,14 @@
     month: '个月前'
   },
   copyright: undefined,
-  lightbox: 'fancybox',
+  lightbox: 'null',
   Snackbar: undefined,
   infinitegrid: {
-    js: 'https://cdn.staticfile.org/egjs-infinitegrid/4.11.1/infinitegrid.min.js',
+    js: 'https://cdn.staticfile.org/egjs-infinitegrid/4.12.0/infinitegrid.min.js',
     buttonText: '加载更多'
   },
   isPhotoFigcaption: false,
-  islazyload: false,
+  islazyloadPlugin: false,
   isAnchor: false,
   percent: {
     toc: true,
@@ -62,108 +169,13 @@
   autoDarkmode: false
 }</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
   title: 'Unity 网络开发',
-  isPost: true,
-  isHome: false,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2024-03-07 15:48:31'
-}</script><script>(win=>{
-      win.saveToLocal = {
-        set: (key, value, ttl) => {
-          if (ttl === 0) return
-          const now = Date.now()
-          const expiry = now + ttl * 86400000
-          const item = {
-            value,
-            expiry
-          }
-          localStorage.setItem(key, JSON.stringify(item))
-        },
-      
-        get: key => {
-          const itemStr = localStorage.getItem(key)
-      
-          if (!itemStr) {
-            return undefined
-          }
-          const item = JSON.parse(itemStr)
-          const now = Date.now()
-      
-          if (now > item.expiry) {
-            localStorage.removeItem(key)
-            return undefined
-          }
-          return item.value
-        }
-      }
-    
-      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = url
-        script.async = true
-        script.onerror = reject
-        script.onload = script.onreadystatechange = function() {
-          const loadState = this.readyState
-          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-          script.onload = script.onreadystatechange = null
-          resolve()
-        }
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/style.css?1"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg" style="background-image: url(url(https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/index/202402212340984.webp?imageSlim));"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://pic.imgdb.cn/item/65b2a3e9871b83018a2fa6bd.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> My ACG</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fa-solid fa-play"></i><span> 追番</span></a></li><li><a class="site-page child" href="/game/"><i class="fa-fw fa fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/acggoods/"><i class="fa-fw fa-solid fa-gift"></i><span> 我的 ACG 周边</span></a></li><li><a class="site-page child" href="/acgmusic/"><i class="fa-fw fa-solid fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/acglive/"><i class="fa-fw fa-solid fa-guitar"></i><span> LIVE</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fa-solid fa-comments"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url(https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/UNITY.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Secret Garden</span></a><a class="nav-page-title" href="/"><span class="site-name">Unity 网络开发</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> My ACG</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fa-solid fa-play"></i><span> 追番</span></a></li><li><a class="site-page child" href="/game/"><i class="fa-fw fa fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/acggoods/"><i class="fa-fw fa-solid fa-gift"></i><span> 我的 ACG 周边</span></a></li><li><a class="site-page child" href="/acgmusic/"><i class="fa-fw fa-solid fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/acglive/"><i class="fa-fw fa-solid fa-guitar"></i><span> LIVE</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fa-solid fa-comments"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Unity 网络开发</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-03-07T15:48:31.000Z" title="发表于 2024-03-07 15:48:31">2024-03-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-07T15:48:31.000Z" title="更新于 2024-03-07 15:48:31">2024-03-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Technology/">Technology</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Technology/Unity/">Unity</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:500,&quot;messagePrev&quot;:&quot;It has been&quot;,&quot;messageNext&quot;:&quot;days since the last update, the content of the article may be outdated.&quot;,&quot;postUpdate&quot;:&quot;2024-03-07 15:48:31&quot;}" hidden></div><!-- flag of hidden posts --></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://clearacg.com">Aki_CCLing</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://clearacg.com/posts/2b56fa81/">https://clearacg.com/posts/2b56fa81/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://clearacg.com" target="_blank">Secret Garden</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Technology/">Technology</a><a class="post-meta__tags" href="/tags/Code/">Code</a></div><div class="post-share"><div class="social-share" data-image="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/UNITY.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.staticfile.org/butterfly-extsrc/1.1.4/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.staticfile.org/butterfly-extsrc/1.1.4/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/posts/b7e144d1/" title="算法"><img class="cover" src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/69553946_p0.webp" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-09</div><div class="info-item-2">算法</div></div><div class="info-2"><div class="info-item-1">A 星寻路算法寻路消耗公式：f(寻路消耗)&#x3D;g(离起点距离)+h(离终点距离) 开启列表：记录待检查的节点。关闭列表：记录已检查的节点。 A 星（A*）寻路算法是一种图搜索算法，用于在网格图上找到从起点到终点的最短路径。 基本原理初始化：将起点加入开启列表。设定起点的 g 值为 0，h 值为起点到终点的估算距离。 循环过程：从开启列表中取出 f 值最小的节点作为当前节点。将当前节点从开启列表移到关闭列表。 检查当前节点的所有相邻节点：如果相邻节点是终点，则路径找到，算法结束。如果相邻节点不在关闭列表中，计算其 g 值和 h 值，并将其加入开启列表。如果相邻节点已在开启列表中，检查新的 g 值是否更小，如果是则更新该节点的 g...</div></div></div></a><a class="pagination-related" href="/posts/b8d84677/" title="Git常用操作"><img class="cover" src="https://pic.imgdb.cn/item/65b2a2ed871b83018a2d55de.webp" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-16</div><div class="info-item-2">Git常用操作</div></div><div class="info-2"><div class="info-item-1">Git常用操作 内容及图片来自GeekHour，请关注支持原作者。     初始化设置配置⽤户名 1git config --global user.name &quot;Your Name&quot;  配置邮箱 1git config --global user.email &quot;mail@example.com&quot;  存储配置 1git config --global credential store 创建仓库创建⼀个新的本地仓库 (省略 project-name 则在当前⽬录创建) 1git init &lt;project-name&gt; 克隆⼀个远程仓库。 1git clone &lt;url&gt;  四个区域⼯作区（Working Directory）就是你在电脑⾥能实际看到的⽬录。 暂存区（Stage &#x2F; Index）暂存区也叫索引，⽤来临时存放未提交的内容􀀄 ⼀般在.git⽬录下的index中。 本地仓库（Repository）Git在本地的版本库，仓库信息存储在.git这个隐藏⽬录中。 远程仓库（Remote...</div></div></div></a><a class="pagination-related" href="/posts/978bdfbc/" title="Unity 学习路线"><img class="cover" src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/UNITY.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-05</div><div class="info-item-2">Unity 学习路线</div></div><div class="info-2"><div class="info-item-1"> 内容参考：课程内容及架构 : 唐老狮 唐老狮的 B 站空间内容整理、面试题整理 : 人间自有韬哥在 人间自有韬哥在的博客盘子 ssa : 盘子 ssa&#x2F;个人学习笔记litfire : 2024 年 Unity 面试题和日常问题总结  CSharp目录传送门 : CSharp 知识目录 CSharp 入门文章传送门 : CSharp 入门 知识点主要内容包括变量、常量、转义字符、类型转换、异常捕获、运算符、条件分支语句、循环语句 CSharp 基础文章传送门 : CSharp 基础主要包括枚举、数组、值类型和引用类型、函数（ref 和 out、参数、重载、递归）、结构体、冒泡排序、递归排序 CSharp 核心文章传送门 : CSharp 核心 主要包括枚举、面向对象（封装、继承、多态） 封装：类和对象、成员变量、成员方法、构造函数、析构函数、成员属性、索引器、静态成员、静态类和静态构造函数、拓展方法、运算符重载 继承：里氏替换原则、继承中的构造函数、万物之父和装箱拆箱、密封类 多态：Vob、抽象类和抽象方法、接口、密封方法 以及七大原则 CSharp 进阶文章传送门...</div></div></div></a><a class="pagination-related" href="/posts/53b59015/" title="Unity 面试题 - CSharp 相关 Part 1"><img class="cover" src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/UNITY.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-06</div><div class="info-item-2">Unity 面试题 - CSharp 相关 Part 1</div></div><div class="info-2"><div class="info-item-1">🟡: 代表个人还有一些理解上的问题🟢: 代表自己面试中被问到过🔴: 代表问题内容未完成 List请说明 C# 中的 List 是如何扩容的C#中的 List 是一个动态数组，其容量可以根据需要动态扩展。初始容量：List在创建时可以指定初始容量（capacity），如果没有指定，则初始容量默认为 0。 自动扩容：当添加元素导致当前容量不足时，List会自动扩容。扩容时，List会分配一个新的数组，并将现有元素复制到新数组中。 扩容倍数：扩容时，新数组的容量通常是旧容量的两倍。这种倍增策略有助于减少频繁分配内存和数据复制的开销。 1234567891011121314151617181920212223242526272829303132using System;using System.Collections.Generic;class Program&#123;    static void Main()    &#123;        // 创建一个初始容量为2的List        List&lt;int&gt; numbers = new...</div></div></div></a><a class="pagination-related" href="/posts/1c8fef53/" title="Unity 面试题 - CSharp 相关 Part 2"><img class="cover" src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/UNITY.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-07</div><div class="info-item-2">Unity 面试题 - CSharp 相关 Part 2</div></div><div class="info-2"><div class="info-item-1">请问什么是线程安全？如何在 C#中实现线程安全操作？C#中属性(Property)和字段(Field)的区别是什么？请解释一下 C#中的异步编程模型（Async&#x2F;Await），它是用来做什么的？请问七大排序算法一般指哪七种排序算法？你一般常用的排序算法是哪种？请简单描述它的排序原理 请简单描述斐波那契数列的基本规则是什么请简单描述 A 星寻路算法的基本原理抽象类中的虚函数和抽象函数，是否必须在子类中重写？当我们使用里式替换原则，用父类容器装载子类对象时我们通过该父类容器调用其中的一个虚函数，执行的逻辑是父类中的还是子类中的逻辑呢？ 我们在游戏开发时，想要获取系统时间，应该如何获取？C#使用 var 声明临时变量相比用指定变量类型声明临时变量，在最终执行时是否会增加性能消耗？int a &#x3D; 10;int b &#x3D; a;b &#x3D; 20;我们知道，上述代码 b 改为 20 后，a 还是 10。（值类型的特点）我们是否可以简单修改以上代码，让 b 变成 20 后，a 跟着一起变。请说出修改方案 我们可以使用...</div></div></div></a><a class="pagination-related" href="/posts/cbdf6728/" title="Unity 面试题 - Lua 相关"><img class="cover" src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/UNITY.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-06</div><div class="info-item-2">Unity 面试题 - Lua 相关</div></div><div class="info-2"><div class="info-item-1">热更新流程简述获取对比文件：从远程服务器下载一个用于对比的文件，该文件记录了当前可用资源的版本号或哈希值等信息。 对比本地资源和远程资源：将下载的对比文件与本地保存的对比文件进行比较，以确定本地资源和远程资源之间的差异。根据比较结果，确定需要更新的资源和需要移除的资源。 资源更新和移除：下载远程服务器上与本地资源不同的更新文件，并覆盖本地对应的资源文件，或者直接将更新的资源文件添加到本地资源目录。根据对比结果，删除本地不再需要的资源文件。 更新对比文件：将下载的远程对比文件替换本地保存的对比文件，以保持本地对比文件与服务器端一致，为下一次热更新做准备。 在 Unity 中 AssetBundle 的压缩方式有不压缩、LZMA、LZ4 三种，请问 LZMA 和 LZ4 有什么区别？🟡 Lua 面向对象的三大特性Lua 如何实现面向对象的三大特性 封装：可以通过 table 进行实现。在 Lua 中，我们可以将对象的属性和方法放入一个 table 中，然后对该 table 进行操作，从而达到封装的效果。 1234567891011121314151617Object =...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://pic.imgdb.cn/item/65b2a3e9871b83018a2fa6bd.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Aki_CCLing</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/AkiCCLing" target="_blank" title="GitHub"><i class="fa-brands fa-github" style="color: #1E3050;"></i></a><a class="social-icon" href="https://space.bilibili.com/5840406" target="_blank" title="Bilibili"><i class="fa-brands fa-bilibili" style="color: #FF6699;"></i></a><a class="social-icon" href="https://steamcommunity.com/id/AKIYC/" target="_blank" title="Steam"><i class="fa-brands fa-steam" style="color: #1E3050;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">一个ACGN爱好者的Blog，有问题与我交流可在Bilibili 留言 / 私信，谢谢你的关注。</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/1161385d/" title="广州 ACGN 地点游玩推荐 / 攻略"><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/noet8h3s.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="广州 ACGN 地点游玩推荐 / 攻略"/></a><div class="content"><a class="title" href="/posts/1161385d/" title="广州 ACGN 地点游玩推荐 / 攻略">广州 ACGN 地点游玩推荐 / 攻略</a><time datetime="2025-02-19T00:41:54.000Z" title="发表于 2025-02-19 00:41:54">2025-02-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/e7073109/" title="Blog更新记录"><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/qungz.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Blog更新记录"/></a><div class="content"><a class="title" href="/posts/e7073109/" title="Blog更新记录">Blog更新记录</a><time datetime="2024-11-27T21:01:33.000Z" title="发表于 2024-11-27 21:01:33">2024-11-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/37d9abb5%60/" title="Unity 面试高频题"><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/UNITY.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unity 面试高频题"/></a><div class="content"><a class="title" href="/posts/37d9abb5%60/" title="Unity 面试高频题">Unity 面试高频题</a><time datetime="2024-08-26T02:07:45.000Z" title="发表于 2024-08-26 02:07:45">2024-08-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/df5996f0/" title="Unity 面试题杂项"><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/UNITY.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unity 面试题杂项"/></a><div class="content"><a class="title" href="/posts/df5996f0/" title="Unity 面试题杂项">Unity 面试题杂项</a><time datetime="2024-08-10T23:05:48.000Z" title="发表于 2024-08-10 23:05:48">2024-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/b7e144d1/" title="算法"><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/69553946_p0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="算法"/></a><div class="content"><a class="title" href="/posts/b7e144d1/" title="算法">算法</a><time datetime="2024-08-09T20:44:54.000Z" title="发表于 2024-08-09 20:44:54">2024-08-09</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By Aki_CCLing</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 6.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div><div class="footer_custom_text"><a href="https://icp.gov.moe/?keyword=20238180" target="_blank">萌ICP备20238180号</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.3.5"></script><script src="/js/main.js?v=5.3.5"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
 
-        Object.keys(attr).forEach(key => {
-          script.setAttribute(key, attr[key])
-        })
-
-        document.head.appendChild(script)
-      })
-    
-      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = url
-        if (id) link.id = id
-        link.onerror = reject
-        link.onload = link.onreadystatechange = function() {
-          const loadState = this.readyState
-          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-          link.onload = link.onreadystatechange = null
-          resolve()
-        }
-        document.head.appendChild(link)
-      })
-    
-      win.activateDarkMode = () => {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = () => {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
-    
-        if (t === 'dark') activateDarkMode()
-        else if (t === 'light') activateLightMode()
-      
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
-    
-      const detectApple = () => {
-        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-          document.documentElement.classList.add('apple')
-        }
-      }
-      detectApple()
-    })(window)</script><link rel="stylesheet" href="/css/style.css?1"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://pic.imgdb.cn/item/65b2a3e9871b83018a2fa6bd.webp" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> My ACG</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fa-solid fa-play"></i><span> 追番</span></a></li><li><a class="site-page child" href="/game/"><i class="fa-fw fa fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/acggoods/"><i class="fa-fw fa-solid fa-gift"></i><span> 我的 ACG 周边</span></a></li><li><a class="site-page child" href="/acgmusic/"><i class="fa-fw fa-solid fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/acglive/"><i class="fa-fw fa-solid fa-guitar"></i><span> LIVE</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fa-solid fa-comments"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/UNITY.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Secret Garden"><span class="site-name">Secret Garden</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> My ACG</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fa-solid fa-play"></i><span> 追番</span></a></li><li><a class="site-page child" href="/game/"><i class="fa-fw fa fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/acggoods/"><i class="fa-fw fa-solid fa-gift"></i><span> 我的 ACG 周边</span></a></li><li><a class="site-page child" href="/acgmusic/"><i class="fa-fw fa-solid fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/acglive/"><i class="fa-fw fa-solid fa-guitar"></i><span> LIVE</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fa-solid fa-comments"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Unity 网络开发</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-03-07T15:48:31.000Z" title="发表于 2024-03-07 15:48:31">2024-03-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-07T15:48:31.000Z" title="更新于 2024-03-07 15:48:31">2024-03-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Technology/">Technology</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Technology/Unity/">Unity</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Unity 网络开发"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><!-- flag of hidden posts --></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://clearacg.com">Aki_CCLing</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://clearacg.com/posts/2b56fa81/">https://clearacg.com/posts/2b56fa81/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://clearacg.com" target="_blank">Secret Garden</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Technology/">Technology</a><a class="post-meta__tags" href="/tags/Code/">Code</a></div><div class="post_share"><div class="social-share" data-image="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/UNITY.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.staticfile.org/butterfly-extsrc/1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.staticfile.org/butterfly-extsrc/1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/b7e144d1/" title="算法"><img class="cover" src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/69553946_p0.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-09</div><div class="title">算法</div></div></a></div><div><a href="/posts/b8d84677/" title="Git常用操作"><img class="cover" src="https://pic.imgdb.cn/item/65b2a2ed871b83018a2d55de.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-16</div><div class="title">Git常用操作</div></div></a></div><div><a href="/posts/978bdfbc/" title="Unity 学习路线"><img class="cover" src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/UNITY.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-05</div><div class="title">Unity 学习路线</div></div></a></div><div><a href="/posts/53b59015/" title="Unity 面试题 - CSharp 相关 Part 1"><img class="cover" src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/UNITY.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-06</div><div class="title">Unity 面试题 - CSharp 相关 Part 1</div></div></a></div><div><a href="/posts/1c8fef53/" title="Unity 面试题 - CSharp 相关 Part 2"><img class="cover" src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/UNITY.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-07</div><div class="title">Unity 面试题 - CSharp 相关 Part 2</div></div></a></div><div><a href="/posts/cbdf6728/" title="Unity 面试题 - Lua 相关"><img class="cover" src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/UNITY.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-06</div><div class="title">Unity 面试题 - Lua 相关</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://pic.imgdb.cn/item/65b2a3e9871b83018a2fa6bd.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Aki_CCLing</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/AkiCCLing" target="_blank" title="GitHub"><i class="fa-brands fa-github" style="color: #1E3050;"></i></a><a class="social-icon" href="https://space.bilibili.com/5840406" target="_blank" title="Bilibili"><i class="fa-brands fa-bilibili" style="color: #FF6699;"></i></a><a class="social-icon" href="https://steamcommunity.com/id/AKIYC/" target="_blank" title="Steam"><i class="fa-brands fa-steam" style="color: #1E3050;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">一个ACGN爱好者的Blog，有问题与我交流可在Bilibili 留言 / 私信，谢谢你的关注。</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/1161385d/" title="广州 ACGN 地点游玩推荐 / 攻略"><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/noet8h3s.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="广州 ACGN 地点游玩推荐 / 攻略"/></a><div class="content"><a class="title" href="/posts/1161385d/" title="广州 ACGN 地点游玩推荐 / 攻略">广州 ACGN 地点游玩推荐 / 攻略</a><time datetime="2025-02-19T00:41:54.000Z" title="发表于 2025-02-19 00:41:54">2025-02-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/e7073109/" title="Blog更新记录"><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/noet8h3s.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Blog更新记录"/></a><div class="content"><a class="title" href="/posts/e7073109/" title="Blog更新记录">Blog更新记录</a><time datetime="2024-11-27T21:01:33.000Z" title="发表于 2024-11-27 21:01:33">2024-11-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/37d9abb5%60/" title="Unity 面试高频题"><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/UNITY.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unity 面试高频题"/></a><div class="content"><a class="title" href="/posts/37d9abb5%60/" title="Unity 面试高频题">Unity 面试高频题</a><time datetime="2024-08-26T02:07:45.000Z" title="发表于 2024-08-26 02:07:45">2024-08-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/df5996f0/" title="Unity 面试题杂项"><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/UNITY.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unity 面试题杂项"/></a><div class="content"><a class="title" href="/posts/df5996f0/" title="Unity 面试题杂项">Unity 面试题杂项</a><time datetime="2024-08-10T23:05:48.000Z" title="发表于 2024-08-10 23:05:48">2024-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/b7e144d1/" title="算法"><img src="https://blogimage-1258650140.cos.ap-nanjing.myqcloud.com/blog/69553946_p0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="算法"/></a><div class="content"><a class="title" href="/posts/b7e144d1/" title="算法">算法</a><time datetime="2024-08-09T20:44:54.000Z" title="发表于 2024-08-09 20:44:54">2024-08-09</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By Aki_CCLing</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="https://icp.gov.moe/?keyword=20238180" target="_blank">萌ICP备20238180号</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.staticfile.org/fancyapps-ui/5.0.33/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
   const getCount = () => {
     const countELement = document.getElementById('twikoo-count')
     if(!countELement) return
@@ -179,22 +191,38 @@
     })
   }
 
-  const init = () => {
-    twikoo.init(Object.assign({
-      el: '#twikoo-wrap',
+  const init = (el = document, path = location.pathname) => {
+    twikoo.init({
+      el: el.querySelector('#twikoo-wrap'),
       envId: 'https://venerable-smakager-94ad33.netlify.app/.netlify/functions/twikoo',
       region: 'ap-shanghai',
       onCommentLoaded: () => {
         btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
-      }
-    }, null))
+      },
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
 
     
+
+    isShuoshuo && (window.shuoshuoComment.destroyTwikoo = () => {
+      if (el.children.length) {
+        el.innerHTML = ''
+        el.classList.add('no-comment')
+      }
+    })
   }
 
-  const loadTwikoo = () => {
-    if (typeof twikoo === 'object') setTimeout(init,0)
-    else getScript('https://cdn.staticfile.org/twikoo/1.6.31/twikoo.all.min.js').then(init)
+  const loadTwikoo = (el, path) => {
+    if (typeof twikoo === 'object') setTimeout(() => init(el, path), 0)
+    else btf.getScript('https://cdn.staticfile.org/twikoo/1.6.41/twikoo.all.min.js').then(() => init(el, path))
+  }
+
+  if (isShuoshuo) {
+    'Twikoo' === 'Twikoo'
+      ? window.shuoshuoComment = { loadComment: loadTwikoo }
+      : window.loadOtherComment = loadTwikoo
+    return
   }
 
   if ('Twikoo' === 'Twikoo' || !false) {
